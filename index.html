@@ -7,7 +7,7 @@
   <meta name="description" content="Clyde Snyders — Grade 10 student at Paterson High School, Port Elizabeth. Coding, robotics, science fair projects, and a 12-week guide to learn coding in 2026 with AI." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
   <style>
     :root{
       --bg: #f6f8fc;
@@ -34,7 +34,7 @@
     *{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{
-      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      font-family:"DM Sans",system-ui,-apple-system,sans-serif;
       background:
         radial-gradient(circle at top right, rgba(139,92,246,0.09), transparent 28%),
         radial-gradient(circle at left center, rgba(37,99,235,0.07), transparent 26%),
@@ -54,19 +54,12 @@
       margin-inline:auto;
     }
 
-    /* Navbar */
+    /* ── Navbar ── */
     .nav{
-      position:fixed;
-      top:16px;
-      left:0;
-      right:0;
-      z-index:1000;
+      position:fixed;top:16px;left:0;right:0;z-index:1000;
       width:min(var(--container), calc(100% - 24px));
       margin-inline:auto;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:16px;
+      display:flex;align-items:center;justify-content:space-between;gap:16px;
       padding:14px 18px;
       border:1px solid rgba(255,255,255,0.5);
       border-radius:999px;
@@ -75,145 +68,72 @@
       box-shadow:0 12px 35px rgba(15,23,42,0.08);
       transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
     }
-    .nav.scrolled{
-      background:rgba(255,255,255,0.88);
-      box-shadow:0 16px 45px rgba(15,23,42,0.10);
-    }
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      text-decoration:none;
-      min-width:max-content;
-    }
+    .nav.scrolled{background:rgba(255,255,255,0.88);box-shadow:0 16px 45px rgba(15,23,42,0.10);}
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;min-width:max-content;}
     .brand-mark{
-      width:42px;height:42px;
-      border-radius:14px;
-      display:grid;
-      place-items:center;
-      color:#fff;
-      font-family:"Space Grotesk",sans-serif;
-      font-weight:700;
+      width:42px;height:42px;border-radius:14px;
+      display:grid;place-items:center;color:#fff;
+      font-family:"Sora",sans-serif;font-weight:700;
       background:linear-gradient(135deg,var(--blue),var(--purple));
       box-shadow:0 10px 24px rgba(37,99,235,0.25);
     }
-    .brand-text{
-      display:flex;
-      flex-direction:column;
-      line-height:1.1;
-    }
-    .brand-text strong{
-      font-family:"Space Grotesk",sans-serif;
-      font-size:1rem;
-      letter-spacing:-0.02em;
-    }
-    .brand-text span{
-      font-size:.78rem;
-      color:var(--muted);
-      margin-top:2px;
-    }
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:6px;
-      list-style:none;
-    }
+    .brand-text{display:flex;flex-direction:column;line-height:1.1;}
+    .brand-text strong{font-family:"Sora",sans-serif;font-size:1rem;letter-spacing:-0.02em;}
+    .brand-text span{font-size:.78rem;color:var(--muted);margin-top:2px;}
+    .nav-links{display:flex;align-items:center;gap:6px;list-style:none;}
     .nav-links a{
-      text-decoration:none;
-      color:var(--muted);
-      font-weight:600;
-      font-size:.92rem;
-      padding:10px 14px;
-      border-radius:999px;
-      transition:background .2s ease, color .2s ease, transform .2s ease;
+      text-decoration:none;color:var(--muted);font-weight:600;font-size:.92rem;
+      padding:10px 14px;border-radius:999px;
+      transition:background .2s ease, color .2s ease;
     }
-    .nav-links a:hover,
-    .nav-links a.active{
+    .nav-links a:hover,.nav-links a.active{
       background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.12));
       color:var(--text);
     }
     .nav-cta{
-      text-decoration:none;
-      padding:11px 16px;
-      border-radius:999px;
+      text-decoration:none;padding:11px 16px;border-radius:999px;
       color:#fff !important;
       background:linear-gradient(135deg,var(--blue),var(--purple));
       box-shadow:0 12px 25px rgba(37,99,235,0.22);
     }
     .menu-btn{
-      display:none;
-      border:0;
-      background:transparent;
-      width:44px;height:44px;
-      border-radius:12px;
-      cursor:pointer;
+      display:none;border:0;background:transparent;
+      width:44px;height:44px;border-radius:12px;cursor:pointer;
     }
     .menu-btn span{
-      display:block;
-      width:22px;height:2px;
-      background:var(--text);
-      margin:5px auto;
-      border-radius:999px;
+      display:block;width:22px;height:2px;background:var(--text);
+      margin:5px auto;border-radius:999px;
       transition:transform .25s ease, opacity .25s ease;
     }
     .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
     .menu-btn.open span:nth-child(2){opacity:0;}
     .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
     .mobile-menu{
-      position:fixed;
-      top:78px;
-      left:50%;
-      transform:translateX(-50%);
-      width:min(var(--container), calc(100% - 24px));
-      z-index:999;
-      display:none;
-      padding:14px;
-      border-radius:22px;
-      background:rgba(255,255,255,0.94);
-      backdrop-filter:blur(20px);
-      box-shadow:var(--shadow);
-      border:1px solid rgba(255,255,255,0.7);
+      position:fixed;top:78px;left:50%;transform:translateX(-50%);
+      width:min(var(--container), calc(100% - 24px));z-index:999;
+      display:none;padding:14px;border-radius:22px;
+      background:rgba(255,255,255,0.94);backdrop-filter:blur(20px);
+      box-shadow:var(--shadow);border:1px solid rgba(255,255,255,0.7);
     }
     .mobile-menu.open{display:block;}
     .mobile-menu a{
-      display:block;
-      text-decoration:none;
-      padding:14px 14px;
-      border-radius:14px;
-      font-weight:600;
-      color:var(--text);
+      display:block;text-decoration:none;padding:14px;
+      border-radius:14px;font-weight:600;color:var(--text);
     }
-    .mobile-menu a:hover{
-      background:rgba(37,99,235,0.08);
-      color:var(--blue);
-    }
+    .mobile-menu a:hover{background:rgba(37,99,235,0.08);color:var(--blue);}
 
-    /* Hero */
-    .hero{
-      padding:132px 0 84px;
-      position:relative;
-      overflow:hidden;
-    }
+    /* ── Hero ── */
+    .hero{padding:132px 0 84px;position:relative;overflow:hidden;}
     .hero-grid{
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap:34px;
-      align-items:center;
+      display:grid;grid-template-columns: 1.15fr .85fr;
+      gap:34px;align-items:center;
     }
     .eyebrow{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:8px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.72);
-      border:1px solid rgba(37,99,235,0.12);
-      color:var(--blue);
-      font-size:.86rem;
-      font-weight:700;
-      letter-spacing:.01em;
-      box-shadow:var(--shadow-soft);
-      margin-bottom:18px;
+      display:inline-flex;align-items:center;gap:10px;
+      padding:8px 14px;border-radius:999px;
+      background:rgba(255,255,255,0.72);border:1px solid rgba(37,99,235,0.12);
+      color:var(--blue);font-size:.86rem;font-weight:700;letter-spacing:.01em;
+      box-shadow:var(--shadow-soft);margin-bottom:18px;
     }
     .eyebrow .dot{
       width:10px;height:10px;border-radius:50%;
@@ -221,891 +141,429 @@
       box-shadow:0 0 0 5px rgba(16,185,129,0.10);
     }
     .hero h1{
-      font-family:"Space Grotesk",sans-serif;
+      font-family:"Sora",sans-serif;
       font-size:clamp(3rem, 6vw, 5.6rem);
-      line-height:0.96;
-      letter-spacing:-0.06em;
-      margin-bottom:18px;
+      line-height:0.96;letter-spacing:-0.06em;margin-bottom:18px;
     }
     .hero h1 span{
       display:block;
       background:linear-gradient(135deg,var(--blue),var(--purple),var(--green));
-      -webkit-background-clip:text;
-      background-clip:text;
-      color:transparent;
+      -webkit-background-clip:text;background-clip:text;color:transparent;
     }
-    .hero-copy{
-      color:var(--muted);
-      max-width:640px;
-      font-size:1.04rem;
-      line-height:1.85;
-      margin-bottom:26px;
-    }
-    .hero-meta{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-bottom:26px;
-    }
+    .hero-copy{color:var(--muted);max-width:640px;font-size:1.04rem;line-height:1.85;margin-bottom:26px;}
+    .hero-meta{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:26px;}
     .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      background:rgba(255,255,255,0.76);
-      border:1px solid var(--border);
-      color:var(--text);
-      font-weight:600;
-      font-size:.88rem;
-      box-shadow:var(--shadow-soft);
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;
+      border-radius:999px;background:rgba(255,255,255,0.76);border:1px solid var(--border);
+      color:var(--text);font-weight:600;font-size:.88rem;box-shadow:var(--shadow-soft);
     }
     .pill.blue{color:var(--blue);}
     .pill.green{color:var(--green);}
     .pill.purple{color:var(--purple-2);}
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-bottom:24px;
-    }
+    .hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px;}
     .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      text-decoration:none;
-      border-radius:16px;
-      padding:14px 18px;
-      font-weight:700;
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      text-decoration:none;border-radius:16px;padding:14px 18px;font-weight:700;
       border:1px solid transparent;
       transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
     }
     .btn:hover{transform:translateY(-2px);}
     .btn-primary{
-      color:#fff;
-      background:linear-gradient(135deg,var(--blue),var(--purple));
+      color:#fff;background:linear-gradient(135deg,var(--blue),var(--purple));
       box-shadow:0 16px 30px rgba(37,99,235,0.18);
     }
-    .btn-secondary{
-      background:rgba(255,255,255,0.80);
-      border-color:var(--border);
-      color:var(--text);
-    }
-    .hero-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-    }
+    .btn-secondary{background:rgba(255,255,255,0.80);border-color:var(--border);color:var(--text);}
+    .hero-links{display:flex;flex-wrap:wrap;gap:12px;}
     .icon-link{
-      width:46px;height:46px;
-      display:grid;place-items:center;
-      text-decoration:none;
-      border-radius:14px;
-      background:rgba(255,255,255,0.75);
-      border:1px solid var(--border);
+      width:46px;height:46px;display:grid;place-items:center;
+      text-decoration:none;border-radius:14px;
+      background:rgba(255,255,255,0.75);border:1px solid var(--border);
       box-shadow:var(--shadow-soft);
       transition:transform .2s ease, border-color .2s ease;
     }
-    .icon-link:hover{
-      transform:translateY(-2px);
-      border-color:rgba(37,99,235,0.25);
-    }
+    .icon-link:hover{transform:translateY(-2px);border-color:rgba(37,99,235,0.25);}
+    .icon-link svg{width:20px;height:20px;display:block;}
 
     .hero-card{
-      position:relative;
-      padding:22px;
-      border-radius:var(--radius-xl);
+      position:relative;padding:22px;border-radius:var(--radius-xl);
       background:linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.72));
-      border:1px solid rgba(255,255,255,0.7);
-      box-shadow:var(--shadow);
-      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.7);box-shadow:var(--shadow);overflow:hidden;
     }
-    .hero-card::before,
-    .hero-card::after{
-      content:"";
-      position:absolute;
-      border-radius:50%;
-      pointer-events:none;
-      filter:blur(2px);
+    .hero-card::before,.hero-card::after{
+      content:"";position:absolute;border-radius:50%;pointer-events:none;filter:blur(2px);
     }
     .hero-card::before{
-      width:220px;height:220px;
-      right:-70px;top:-80px;
+      width:220px;height:220px;right:-70px;top:-80px;
       background:radial-gradient(circle, rgba(37,99,235,0.15), transparent 65%);
     }
     .hero-card::after{
-      width:180px;height:180px;
-      left:-70px;bottom:-80px;
+      width:180px;height:180px;left:-70px;bottom:-80px;
       background:radial-gradient(circle, rgba(16,185,129,0.12), transparent 65%);
     }
     .portrait{
-      position:relative;
-      aspect-ratio: 4 / 5;
-      border-radius:22px;
-      overflow:hidden;
+      position:relative;aspect-ratio: 4 / 5;border-radius:22px;overflow:hidden;
       background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.12), rgba(16,185,129,0.10));
-      display:grid;
-      place-items:center;
-      font-size:4.8rem;
+      display:grid;place-items:center;
       border:1px solid rgba(255,255,255,0.72);
     }
-    .portrait img{
-      width:100%;height:100%;object-fit:cover;
-    }
+    .portrait img{width:100%;height:100%;object-fit:cover;}
     .floating{
-      position:absolute;
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:12px 14px;
-      border-radius:16px;
+      position:absolute;display:flex;align-items:center;gap:10px;
+      padding:12px 14px;border-radius:16px;
       background:rgba(255,255,255,0.92);
       box-shadow:0 16px 32px rgba(15,23,42,0.12);
       border:1px solid rgba(255,255,255,0.8);
-      backdrop-filter:blur(12px);
-      font-size:.85rem;
-      font-weight:700;
-      color:var(--text);
+      backdrop-filter:blur(12px);font-size:.85rem;font-weight:700;color:var(--text);
     }
-    .floating small{
-      display:block;
-      font-size:.72rem;
-      color:var(--muted);
-      font-weight:600;
-      margin-top:2px;
-    }
+    .floating small{display:block;font-size:.72rem;color:var(--muted);font-weight:600;margin-top:2px;}
     .floating.one{top:34px;left:-10px;animation:float 4.5s ease-in-out infinite;}
     .floating.two{bottom:34px;right:-8px;animation:float 4.5s ease-in-out infinite .8s;}
     .floating .badge{
-      width:36px;height:36px;border-radius:12px;
-      display:grid;place-items:center;
-      color:#fff;
-      background:linear-gradient(135deg,var(--blue),var(--purple));
+      width:36px;height:36px;border-radius:12px;display:grid;place-items:center;
+      color:#fff;background:linear-gradient(135deg,var(--blue),var(--purple));
     }
 
-    /* Sections */
-    section{
-      padding:84px 0;
-      position:relative;
-    }
-    .section-head{
-      margin-bottom:28px;
-      display:flex;
-      flex-direction:column;
-      gap:10px;
-      max-width:760px;
-    }
-    .section-kicker{
-      color:var(--blue);
-      font-weight:800;
-      font-size:.8rem;
-      letter-spacing:.16em;
-      text-transform:uppercase;
-    }
+    /* ── Sections ── */
+    section{padding:84px 0;position:relative;}
+    .section-head{margin-bottom:28px;display:flex;flex-direction:column;gap:10px;max-width:760px;}
+    .section-kicker{color:var(--blue);font-weight:800;font-size:.8rem;letter-spacing:.16em;text-transform:uppercase;}
     .section-title{
-      font-family:"Space Grotesk",sans-serif;
-      font-size:clamp(2rem, 3.6vw, 3.15rem);
-      line-height:1.05;
-      letter-spacing:-0.05em;
+      font-family:"Sora",sans-serif;
+      font-size:clamp(2rem, 3.6vw, 3.15rem);line-height:1.05;letter-spacing:-0.05em;
     }
-    .section-sub{
-      color:var(--muted);
-      font-size:1rem;
-      max-width:760px;
-    }
-
+    .section-sub{color:var(--muted);font-size:1rem;max-width:760px;}
     .panel{
-      background:var(--surface);
-      border:1px solid var(--border);
-      border-radius:var(--radius-xl);
-      box-shadow:var(--shadow-soft);
-      backdrop-filter:blur(16px);
+      background:var(--surface);border:1px solid var(--border);
+      border-radius:var(--radius-xl);box-shadow:var(--shadow-soft);backdrop-filter:blur(16px);
     }
 
-    /* About */
-    .about-grid{
-      display:grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap:28px;
-      align-items:start;
-    }
-    .about-card{
-      padding:28px;
-    }
-    .about-card p{
-      color:var(--muted);
-      margin-bottom:16px;
-    }
+    /* ── About ── */
+    .about-grid{display:grid;grid-template-columns: 1.1fr .9fr;gap:28px;align-items:start;}
+    .about-card{padding:28px;}
+    .about-card p{color:var(--muted);margin-bottom:16px;}
     .about-card p strong{color:var(--text);}
-    .detail-grid{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:12px;
-      margin-top:22px;
-    }
-    .detail{
-      padding:16px;
-      border-radius:18px;
-      background:rgba(248,250,252,0.9);
-      border:1px solid var(--border);
-    }
-    .detail span{
-      display:block;
-      font-size:.76rem;
-      text-transform:uppercase;
-      letter-spacing:.12em;
-      color:var(--muted);
-      font-weight:800;
-      margin-bottom:6px;
-    }
-    .detail strong{
-      font-family:"Space Grotesk",sans-serif;
-      font-size:1rem;
-      letter-spacing:-0.02em;
-    }
-    .skills{
-      margin-top:22px;
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-    }
+    .detail-grid{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:12px;margin-top:22px;}
+    .detail{padding:16px;border-radius:18px;background:rgba(248,250,252,0.9);border:1px solid var(--border);}
+    .detail span{display:block;font-size:.76rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:800;margin-bottom:6px;}
+    .detail strong{font-family:"Sora",sans-serif;font-size:1rem;letter-spacing:-0.02em;}
+    .skills{margin-top:22px;display:flex;flex-wrap:wrap;gap:10px;}
     .chip{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
+      display:inline-flex;align-items:center;gap:8px;padding:10px 14px;border-radius:999px;
       background:linear-gradient(135deg, rgba(37,99,235,0.08), rgba(139,92,246,0.08));
-      border:1px solid rgba(37,99,235,0.12);
-      color:var(--text);
-      font-weight:700;
-      font-size:.86rem;
+      border:1px solid rgba(37,99,235,0.12);color:var(--text);font-weight:700;font-size:.86rem;
     }
-    .profile-card{
-      padding:22px;
-      display:grid;
-      gap:12px;
-    }
+    .profile-card{padding:22px;display:grid;gap:12px;}
     .profile-photo{
-      aspect-ratio:1/1;
-      border-radius:22px;
-      display:grid;
-      place-items:center;
-      background:
-        radial-gradient(circle at 30% 30%, rgba(37,99,235,0.12), transparent 28%),
+      aspect-ratio:1/1;border-radius:22px;display:grid;place-items:center;
+      background:radial-gradient(circle at 30% 30%, rgba(37,99,235,0.12), transparent 28%),
         radial-gradient(circle at 75% 70%, rgba(16,185,129,0.12), transparent 28%),
         linear-gradient(135deg, rgba(37,99,235,0.08), rgba(139,92,246,0.08));
       border:1px solid var(--border);
-      font-size:5rem;
     }
-    .mini-stats{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:12px;
-    }
+    .mini-stats{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:12px;}
     .mini{
-      padding:16px 12px;
-      border-radius:18px;
-      background:rgba(255,255,255,0.76);
-      border:1px solid var(--border);
-      text-align:center;
+      padding:16px 12px;border-radius:18px;
+      background:rgba(255,255,255,0.76);border:1px solid var(--border);text-align:center;
     }
     .mini strong{
-      display:block;
-      font-family:"Space Grotesk",sans-serif;
-      font-size:1.7rem;
-      letter-spacing:-0.05em;
-      line-height:1;
-      margin-bottom:5px;
-      color:var(--blue);
+      display:block;font-family:"Sora",sans-serif;font-size:1.7rem;letter-spacing:-0.05em;
+      line-height:1;margin-bottom:5px;color:var(--blue);
     }
-    .mini span{
-      color:var(--muted);
-      font-size:.8rem;
-      font-weight:600;
-    }
+    .mini span{color:var(--muted);font-size:.8rem;font-weight:600;}
 
-    /* Achievements */
-    .stats-grid{
-      display:grid;
-      grid-template-columns:repeat(4, minmax(0,1fr));
-      gap:14px;
-      margin-bottom:18px;
-    }
+    /* ── Achievements ── */
+    .stats-grid{display:grid;grid-template-columns:repeat(4, minmax(0,1fr));gap:14px;margin-bottom:18px;}
     .stat{
-      padding:22px 18px;
-      text-align:center;
-      border-radius:22px;
+      padding:22px 18px;text-align:center;border-radius:22px;
       background:linear-gradient(180deg, rgba(255,255,255,0.90), rgba(255,255,255,0.70));
-      border:1px solid var(--border);
-      box-shadow:var(--shadow-soft);
+      border:1px solid var(--border);box-shadow:var(--shadow-soft);
     }
     .stat strong{
-      display:block;
-      font-family:"Space Grotesk",sans-serif;
-      font-size:2rem;
-      letter-spacing:-0.06em;
-      color:var(--text);
-      line-height:1;
-      margin-bottom:8px;
+      display:block;font-family:"Sora",sans-serif;font-size:2rem;letter-spacing:-0.06em;
+      color:var(--text);line-height:1;margin-bottom:8px;
     }
     .stat span{color:var(--muted);font-size:.84rem;font-weight:600;}
-    .achievements{
-      display:grid;
-      grid-template-columns:repeat(2, minmax(0,1fr));
-      gap:14px;
-      margin-top:24px;
-    }
+    .achievements{display:grid;grid-template-columns:repeat(2, minmax(0,1fr));gap:14px;margin-top:24px;}
     .achievement{
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-      padding:20px;
-      border-radius:22px;
-      background:var(--surface-strong);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow-soft);
+      display:flex;gap:14px;align-items:flex-start;padding:20px;border-radius:22px;
+      background:var(--surface-strong);border:1px solid var(--border);box-shadow:var(--shadow-soft);
       transition:transform .2s ease, border-color .2s ease;
     }
-    .achievement:hover{
-      transform:translateY(-3px);
-      border-color:rgba(37,99,235,0.16);
-    }
+    .achievement:hover{transform:translateY(-3px);border-color:rgba(37,99,235,0.16);}
     .icon{
-      width:52px;height:52px;
-      border-radius:16px;
-      flex:none;
-      display:grid;
-      place-items:center;
-      font-size:1.4rem;
+      width:52px;height:52px;border-radius:16px;flex:none;
+      display:grid;place-items:center;
       background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.10));
       border:1px solid rgba(37,99,235,0.10);
     }
-    .achievement h3{
-      font-family:"Space Grotesk",sans-serif;
-      font-size:1.03rem;
-      line-height:1.25;
-      margin-bottom:6px;
-    }
-    .achievement p{
-      color:var(--muted);
-      font-size:.92rem;
-      line-height:1.65;
-    }
+    .achievement h3{font-family:"Sora",sans-serif;font-size:1.03rem;line-height:1.25;margin-bottom:6px;}
+    .achievement p{color:var(--muted);font-size:.92rem;line-height:1.65;}
     .year{
-      margin-left:auto;
-      white-space:nowrap;
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(37,99,235,0.08);
-      color:var(--blue);
-      font-weight:800;
-      font-size:.77rem;
+      margin-left:auto;white-space:nowrap;padding:8px 12px;border-radius:999px;
+      background:rgba(37,99,235,0.08);color:var(--blue);font-weight:800;font-size:.77rem;
       height:fit-content;
     }
     .note{
-      margin-top:16px;
-      padding:16px 18px;
-      border-radius:18px;
+      margin-top:16px;padding:16px 18px;border-radius:18px;
       border:1px dashed rgba(37,99,235,0.18);
       background:linear-gradient(135deg, rgba(37,99,235,0.05), rgba(16,185,129,0.06));
-      color:var(--muted);
-      font-size:.93rem;
+      color:var(--muted);font-size:.93rem;
     }
     .note strong{color:var(--text);}
 
-    /* Projects */
-    .project-grid{
-      display:grid;
-      grid-template-columns:repeat(3, minmax(0,1fr));
-      gap:16px;
-    }
+    /* ── Projects ── */
+    .project-grid{display:grid;grid-template-columns:repeat(3, minmax(0,1fr));gap:16px;}
     .project{
-      padding:22px;
-      border-radius:24px;
-      background:var(--surface-strong);
-      border:1px solid var(--border);
-      box-shadow:var(--shadow-soft);
-      transition:transform .2s ease, box-shadow .2s ease;
-      overflow:hidden;
-      position:relative;
+      padding:22px;border-radius:24px;background:var(--surface-strong);
+      border:1px solid var(--border);box-shadow:var(--shadow-soft);
+      transition:transform .2s ease, box-shadow .2s ease;overflow:hidden;position:relative;
     }
     .project:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
     .project::before{
-      content:"";
-      position:absolute;
-      inset:auto -40px -40px auto;
-      width:120px;height:120px;
+      content:"";position:absolute;inset:auto -40px -40px auto;width:120px;height:120px;
       border-radius:50%;
       background:radial-gradient(circle, rgba(139,92,246,0.11), transparent 60%);
       pointer-events:none;
     }
-    .project-top{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      margin-bottom:14px;
-    }
+    .project-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;}
     .project-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:8px 12px;
-      border-radius:999px;
-      font-size:.78rem;
-      font-weight:800;
+      display:inline-flex;align-items:center;gap:8px;padding:8px 12px;
+      border-radius:999px;font-size:.78rem;font-weight:800;
     }
     .badge-live{background:rgba(16,185,129,0.10);color:var(--green);}
     .badge-soon{background:rgba(139,92,246,0.10);color:var(--purple);}
     .badge-school{background:rgba(37,99,235,0.10);color:var(--blue);}
-    .project h3{
-      font-family:"Space Grotesk",sans-serif;
-      font-size:1.12rem;
-      margin-bottom:8px;
-      letter-spacing:-0.03em;
-    }
-    .project p{
-      color:var(--muted);
-      font-size:.93rem;
-      line-height:1.7;
-      margin-bottom:14px;
-    }
-    .tags{
-      display:flex;
-      flex-wrap:wrap;
-      gap:8px;
-      margin-bottom:16px;
-    }
+    .project h3{font-family:"Sora",sans-serif;font-size:1.12rem;margin-bottom:8px;letter-spacing:-0.03em;}
+    .project p{color:var(--muted);font-size:.93rem;line-height:1.7;margin-bottom:14px;}
+    .tags{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;}
     .tag{
-      padding:7px 10px;
-      border-radius:999px;
-      background:rgba(248,250,252,0.9);
-      border:1px solid var(--border);
-      color:var(--muted);
-      font-size:.76rem;
-      font-weight:700;
+      padding:7px 10px;border-radius:999px;background:rgba(248,250,252,0.9);
+      border:1px solid var(--border);color:var(--muted);font-size:.76rem;font-weight:700;
     }
-    .links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      padding-top:14px;
-      border-top:1px solid var(--border);
-    }
-    .links a{
-      text-decoration:none;
-      color:var(--blue);
-      font-weight:800;
-      font-size:.86rem;
-    }
+    .links{display:flex;flex-wrap:wrap;gap:12px;padding-top:14px;border-top:1px solid var(--border);}
+    .links a{text-decoration:none;color:var(--blue);font-weight:800;font-size:.86rem;}
 
-    /* Books & Guide */
-    .resources-grid{
-      display:grid;
-      grid-template-columns:1.1fr .9fr;
-      gap:16px;
-    }
-    .resources{
-      padding:24px;
-    }
-    .book-list{
-      display:grid;
-      gap:12px;
-      margin-top:18px;
-    }
+    /* ── Books & Guide ── */
+    .resources-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:16px;}
+    .resources{padding:24px;}
+    .book-list{display:grid;gap:12px;margin-top:18px;}
     .book{
-      display:flex;
-      gap:14px;
-      align-items:flex-start;
-      padding:16px;
-      border-radius:18px;
-      background:rgba(248,250,252,0.95);
-      border:1px solid var(--border);
+      display:flex;gap:14px;align-items:flex-start;padding:16px;border-radius:18px;
+      background:rgba(248,250,252,0.95);border:1px solid var(--border);
     }
     .book-ico{
-      width:48px;height:48px;
-      border-radius:16px;
-      display:grid;
-      place-items:center;
-      flex:none;
+      width:48px;height:48px;border-radius:16px;display:grid;place-items:center;flex:none;
       background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.10));
       border:1px solid rgba(37,99,235,0.10);
-      font-size:1.25rem;
     }
-    .book h3{
-      font-family:"Space Grotesk",sans-serif;
-      font-size:1rem;
-      margin-bottom:3px;
-    }
-    .book p{
-      color:var(--muted);
-      font-size:.9rem;
-      line-height:1.6;
-    }
-    .resource-links{
-      display:grid;
-      gap:12px;
-      margin-top:18px;
-    }
+    .book h3{font-family:"Sora",sans-serif;font-size:1rem;margin-bottom:3px;}
+    .book p{color:var(--muted);font-size:.9rem;line-height:1.6;}
+    .resource-links{display:grid;gap:12px;margin-top:18px;}
     .resource-link{
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:14px;
-      text-decoration:none;
-      padding:16px 18px;
-      border-radius:18px;
-      background:rgba(255,255,255,0.86);
-      border:1px solid var(--border);
-      font-weight:800;
-      color:var(--text);
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+      text-decoration:none;padding:16px 18px;border-radius:18px;
+      background:rgba(255,255,255,0.86);border:1px solid var(--border);
+      font-weight:800;color:var(--text);
       transition:transform .2s ease, border-color .2s ease;
     }
-    .resource-link:hover{
-      transform:translateY(-2px);
-      border-color:rgba(37,99,235,0.20);
-    }
+    .resource-link:hover{transform:translateY(-2px);border-color:rgba(37,99,235,0.20);}
     .guide-card{
-      padding:28px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
+      padding:28px;display:flex;flex-direction:column;justify-content:center;
       background:
         radial-gradient(circle at top right, rgba(37,99,235,0.12), transparent 30%),
         radial-gradient(circle at bottom left, rgba(16,185,129,0.12), transparent 28%),
         linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.76));
     }
     .guide-card .eyebrow{margin-bottom:14px;}
-    .guide-card h3{
-      font-family:"Space Grotesk",sans-serif;
-      font-size:1.6rem;
-      letter-spacing:-0.05em;
-      line-height:1.1;
-      margin-bottom:12px;
-    }
-    .guide-card p{
-      color:var(--muted);
-      margin-bottom:16px;
-      line-height:1.75;
-    }
+    .guide-card h3{font-family:"Sora",sans-serif;font-size:1.6rem;letter-spacing:-0.05em;line-height:1.1;margin-bottom:12px;}
+    .guide-card p{color:var(--muted);margin-bottom:16px;line-height:1.75;}
     .guide-banner{
-      padding:16px 18px;
-      border-radius:18px;
-      background:rgba(37,99,235,0.06);
-      border:1px solid rgba(37,99,235,0.12);
-      color:var(--text);
-      font-weight:700;
-      line-height:1.7;
+      padding:16px 18px;border-radius:18px;background:rgba(37,99,235,0.06);
+      border:1px solid rgba(37,99,235,0.12);color:var(--text);font-weight:700;line-height:1.7;
     }
 
-    /* Contact */
-    .contact-grid{
-      display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:16px;
-      align-items:start;
-    }
-    .contact-card{
-      padding:24px;
-    }
-    .contact-card p{
-      color:var(--muted);
-      margin-bottom:18px;
-    }
-    .contact-links{
-      display:grid;
-      gap:12px;
-    }
+    /* ── Contact ── */
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:16px;align-items:start;}
+    .contact-card{padding:24px;}
+    .contact-card p{color:var(--muted);margin-bottom:18px;}
+    .contact-links{display:grid;gap:12px;}
     .contact-item{
-      display:flex;
-      align-items:center;
-      gap:14px;
-      text-decoration:none;
-      padding:16px 18px;
-      border-radius:18px;
-      background:rgba(248,250,252,0.95);
-      border:1px solid var(--border);
+      display:flex;align-items:center;gap:14px;text-decoration:none;
+      padding:16px 18px;border-radius:18px;
+      background:rgba(248,250,252,0.95);border:1px solid var(--border);
       transition:transform .2s ease, border-color .2s ease;
     }
-    .contact-item:hover{
-      transform:translateX(3px);
-      border-color:rgba(37,99,235,0.18);
-    }
+    .contact-item:hover{transform:translateX(3px);border-color:rgba(37,99,235,0.18);}
     .contact-item .ci{
-      width:46px;height:46px;
-      border-radius:14px;
-      display:grid;
-      place-items:center;
+      width:46px;height:46px;border-radius:14px;display:grid;place-items:center;
       background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.10));
-      border:1px solid rgba(37,99,235,0.10);
-      font-size:1.1rem;
-      flex:none;
+      border:1px solid rgba(37,99,235,0.10);flex:none;
     }
-    .contact-item strong{
-      display:block;
-      font-size:.9rem;
-      margin-bottom:2px;
-    }
-    .contact-item span{
-      display:block;
-      color:var(--muted);
-      font-size:.83rem;
-    }
-    .form{
-      padding:24px;
-    }
-    .form h3{
-      font-family:"Space Grotesk",sans-serif;
-      font-size:1.2rem;
-      margin-bottom:18px;
-      letter-spacing:-0.03em;
-    }
-    .form-row{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
-    }
+    .contact-item .ci svg{width:22px;height:22px;display:block;}
+    .contact-item strong{display:block;font-size:.9rem;margin-bottom:2px;}
+    .contact-item span{display:block;color:var(--muted);font-size:.83rem;}
+    .form{padding:24px;}
+    .form h3{font-family:"Sora",sans-serif;font-size:1.2rem;margin-bottom:18px;letter-spacing:-0.03em;}
+    .form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
     .field{margin-bottom:12px;}
     .field label{
-      display:block;
-      font-size:.78rem;
-      font-weight:800;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      color:var(--muted);
-      margin-bottom:8px;
+      display:block;font-size:.78rem;font-weight:800;letter-spacing:.12em;
+      text-transform:uppercase;color:var(--muted);margin-bottom:8px;
     }
-    .field input,
-    .field textarea,
-    .field select{
-      width:100%;
-      border:1px solid var(--border);
-      background:rgba(248,250,252,0.96);
-      border-radius:16px;
-      padding:14px 14px;
-      outline:none;
-      transition:border-color .2s ease, box-shadow .2s ease;
-      color:var(--text);
+    .field input,.field textarea,.field select{
+      width:100%;border:1px solid var(--border);background:rgba(248,250,252,0.96);
+      border-radius:16px;padding:14px;outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease;color:var(--text);
     }
-    .field input:focus,
-    .field textarea:focus,
-    .field select:focus{
-      border-color:rgba(37,99,235,0.35);
-      box-shadow:0 0 0 4px rgba(37,99,235,0.08);
+    .field input:focus,.field textarea:focus,.field select:focus{
+      border-color:rgba(37,99,235,0.35);box-shadow:0 0 0 4px rgba(37,99,235,0.08);
     }
     .field textarea{min-height:140px;resize:vertical;}
     .submit{
-      width:100%;
-      border:0;
-      border-radius:16px;
-      padding:14px 18px;
-      font-weight:800;
-      color:#fff;
+      width:100%;border:0;border-radius:16px;padding:14px 18px;
+      font-weight:800;color:#fff;
       background:linear-gradient(135deg,var(--blue),var(--purple));
-      box-shadow:0 16px 30px rgba(37,99,235,0.18);
-      cursor:pointer;
+      box-shadow:0 16px 30px rgba(37,99,235,0.18);cursor:pointer;
       transition:transform .2s ease, opacity .2s ease;
     }
     .submit:hover{transform:translateY(-2px);}
     .success{
-      display:none;
-      margin-top:12px;
-      padding:14px 16px;
-      border-radius:16px;
-      background:rgba(16,185,129,0.10);
-      color:#047857;
-      border:1px solid rgba(16,185,129,0.18);
-      font-weight:700;
-      text-align:center;
+      display:none;margin-top:12px;padding:14px 16px;border-radius:16px;
+      background:rgba(16,185,129,0.10);color:#047857;
+      border:1px solid rgba(16,185,129,0.18);font-weight:700;text-align:center;
     }
 
-    /* Footer */
-    footer{
-      padding:28px 0 36px;
-      color:var(--muted);
-    }
+    /* ── Footer ── */
+    footer{padding:28px 0 36px;color:var(--muted);}
     .footer-inner{
-      padding:18px 0 0;
-      border-top:1px solid var(--border);
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:18px;
-      flex-wrap:wrap;
+      padding:18px 0 0;border-top:1px solid var(--border);
+      display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap;
     }
-    .footer-brand{
-      font-family:"Space Grotesk",sans-serif;
-      font-weight:700;
-      color:var(--text);
-    }
-    .footer-links{
-      display:flex;
-      gap:16px;
-      flex-wrap:wrap;
-    }
-    .footer-links a{
-      text-decoration:none;
-      color:var(--muted);
-      font-size:.92rem;
-      font-weight:600;
-    }
+    .footer-brand{font-family:"Sora",sans-serif;font-weight:700;color:var(--text);}
+    .footer-links{display:flex;gap:16px;flex-wrap:wrap;}
+    .footer-links a{text-decoration:none;color:var(--muted);font-size:.92rem;font-weight:600;}
     .footer-links a:hover{color:var(--blue);}
 
-    /* Popup */
+    /* ── Popup ── */
     .popup-overlay{
-      position:fixed;
-      inset:0;
-      z-index:2000;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding:18px;
-      background:rgba(15,23,42,0.52);
-      backdrop-filter:blur(8px);
+      position:fixed;inset:0;z-index:2000;
+      display:flex;align-items:center;justify-content:center;padding:18px;
+      background:rgba(15,23,42,0.52);backdrop-filter:blur(8px);
     }
-    .popup-overlay.hidden{
-      opacity:0;
-      pointer-events:none;
-      transition:opacity .28s ease;
-    }
+    .popup-overlay.hidden{opacity:0;pointer-events:none;transition:opacity .28s ease;}
     .popup{
-      width:min(520px, 100%);
-      padding:26px;
-      border-radius:28px;
+      width:min(520px, 100%);padding:26px;border-radius:28px;
       background:rgba(255,255,255,0.96);
       box-shadow:0 30px 80px rgba(15,23,42,0.18);
       border:1px solid rgba(255,255,255,0.72);
     }
     .popup-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:flex-start;
-      gap:12px;
-      margin-bottom:18px;
+      display:flex;justify-content:space-between;align-items:flex-start;
+      gap:12px;margin-bottom:18px;
     }
     .popup-close{
-      border:0;
-      background:rgba(248,250,252,0.95);
-      width:40px;height:40px;
-      border-radius:12px;
-      cursor:pointer;
-      font-size:1rem;
-      color:var(--muted);
+      border:0;background:rgba(248,250,252,0.95);
+      width:40px;height:40px;border-radius:12px;cursor:pointer;
+      font-size:1rem;color:var(--muted);
     }
     .popup-emoji{
-      width:56px;height:56px;
-      border-radius:18px;
-      display:grid;
-      place-items:center;
-      font-size:1.5rem;
+      width:64px;height:64px;border-radius:18px;
+      display:grid;place-items:center;
       background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.10));
-      border:1px solid rgba(37,99,235,0.10);
-      margin-bottom:14px;
+      border:1px solid rgba(37,99,235,0.10);margin-bottom:14px;overflow:hidden;
     }
     .popup h2{
-      font-family:"Space Grotesk",sans-serif;
-      font-size:1.65rem;
-      line-height:1.1;
-      letter-spacing:-0.04em;
-      margin-bottom:10px;
+      font-family:"Sora",sans-serif;font-size:1.65rem;line-height:1.1;
+      letter-spacing:-0.04em;margin-bottom:10px;
     }
-    .popup p{
-      color:var(--muted);
-      line-height:1.75;
-      margin-bottom:18px;
-    }
-    .popup-grid{
-      display:flex;
-      flex-wrap:wrap;
-      gap:10px;
-      margin-bottom:18px;
-    }
+    .popup p{color:var(--muted);line-height:1.75;margin-bottom:18px;}
+    .popup-grid{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px;}
     .popup-chip{
-      padding:8px 12px;
-      border-radius:999px;
-      background:rgba(248,250,252,0.95);
-      border:1px solid var(--border);
-      font-size:.84rem;
-      font-weight:700;
+      padding:8px 12px;border-radius:999px;background:rgba(248,250,252,0.95);
+      border:1px solid var(--border);font-size:.84rem;font-weight:700;
     }
     .popup .btn{width:100%;}
 
-    /* Reveal */
-    .reveal{
-      opacity:0;
-      transform:translateY(24px);
-      transition:opacity .65s ease, transform .65s ease;
-    }
-    .reveal.visible{
-      opacity:1;
-      transform:translateY(0);
-    }
+    /* ── Anime character containers ── */
+    .anime-icon{display:grid;place-items:center;width:100%;height:100%;}
+    .anime-icon svg{width:100%;height:100%;}
 
-    /* Animations */
-    @keyframes float{
-      0%,100%{transform:translateY(0);}
-      50%{transform:translateY(-7px);}
-    }
+    /* ── Reveal ── */
+    .reveal{opacity:0;transform:translateY(24px);transition:opacity .65s ease, transform .65s ease;}
+    .reveal.visible{opacity:1;transform:translateY(0);}
 
-    /* Responsive */
+    /* ── Animations ── */
+    @keyframes float{0%,100%{transform:translateY(0);}50%{transform:translateY(-7px);}}
+
+    /* ── Responsive ── */
     @media (max-width: 980px){
       .nav-links, .nav-cta{display:none;}
       .menu-btn{display:block;}
-      .hero-grid,
-      .about-grid,
-      .resources-grid,
-      .contact-grid{
-        grid-template-columns:1fr;
-      }
-      .project-grid,
-      .achievements{
-        grid-template-columns:1fr;
-      }
-      .stats-grid{
-        grid-template-columns:repeat(2, minmax(0,1fr));
-      }
-      .hero{
-        padding-top:120px;
-      }
+      .hero-grid,.about-grid,.resources-grid,.contact-grid{grid-template-columns:1fr;}
+      .project-grid,.achievements{grid-template-columns:1fr;}
+      .stats-grid{grid-template-columns:repeat(2, minmax(0,1fr));}
+      .hero{padding-top:120px;}
     }
     @media (max-width: 640px){
       .container{width:min(var(--container), calc(100% - 28px));}
-      .nav{
-        border-radius:24px;
-      }
-      .hero h1{
-        font-size:clamp(2.6rem, 12vw, 4.3rem);
-      }
-      .stats-grid,
-      .detail-grid,
-      .mini-stats,
-      .form-row{
-        grid-template-columns:1fr;
-      }
+      .nav{border-radius:24px;}
+      .hero h1{font-size:clamp(2.6rem, 12vw, 4.3rem);}
+      .stats-grid,.detail-grid,.mini-stats,.form-row{grid-template-columns:1fr;}
       section{padding:72px 0;}
     }
   </style>
 </head>
 <body>
 
+  <!-- ══════════════════════════════════════
+       POPUP — Yuji Itadori (JJK)
+  ══════════════════════════════════════ -->
   <div class="popup-overlay" id="popupOverlay">
     <div class="popup">
       <div class="popup-top">
         <div>
-          <div class="popup-emoji">👋</div>
+          <!-- Yuji Itadori SVG -->
+          <div class="popup-emoji">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="32" cy="58" rx="20" ry="10" fill="#1a1a2e"/>
+              <path d="M22 52 Q32 58 42 52" fill="#1a1a2e"/>
+              <rect x="28" y="43" width="8" height="8" rx="3" fill="#F5C5A0"/>
+              <ellipse cx="32" cy="34" rx="15" ry="17" fill="#F5C5A0"/>
+              <ellipse cx="17" cy="30" rx="3" ry="8" fill="#2a1a0a"/>
+              <ellipse cx="47" cy="30" rx="3" ry="8" fill="#2a1a0a"/>
+              <ellipse cx="32" cy="20" rx="15" ry="8" fill="#D4607A"/>
+              <polygon points="18,22 14,10 22,18" fill="#D4607A"/>
+              <polygon points="22,18 19,7 25,16" fill="#E07090"/>
+              <polygon points="27,16 25,5 30,15" fill="#D4607A"/>
+              <polygon points="31,15 30,4 35,15" fill="#E07090"/>
+              <polygon points="35,15 36,5 40,17" fill="#D4607A"/>
+              <polygon points="40,17 42,7 45,19" fill="#E07090"/>
+              <polygon points="45,19 48,9 49,22" fill="#D4607A"/>
+              <ellipse cx="32" cy="24" rx="14" ry="5" fill="#2a1a0a" opacity="0.4"/>
+              <ellipse cx="17" cy="35" rx="2.5" ry="3.5" fill="#F5C5A0" stroke="#e0a880" stroke-width="0.5"/>
+              <ellipse cx="47" cy="35" rx="2.5" ry="3.5" fill="#F5C5A0" stroke="#e0a880" stroke-width="0.5"/>
+              <ellipse cx="25" cy="34" rx="4.5" ry="5" fill="#8B4513"/>
+              <ellipse cx="25" cy="34" rx="3" ry="4" fill="#5C2E0A"/>
+              <ellipse cx="25" cy="34" rx="2" ry="2.5" fill="#3a1a00"/>
+              <circle cx="26.5" cy="32" r="1.2" fill="white"/>
+              <ellipse cx="39" cy="34" rx="4.5" ry="5" fill="#8B4513"/>
+              <ellipse cx="39" cy="34" rx="3" ry="4" fill="#5C2E0A"/>
+              <ellipse cx="39" cy="34" rx="2" ry="2.5" fill="#3a1a00"/>
+              <circle cx="40.5" cy="32" r="1.2" fill="white"/>
+              <line x1="28" y1="40" x2="30" y2="41" stroke="#c9956a" stroke-width="0.8" stroke-linecap="round"/>
+              <line x1="34" y1="41" x2="36" y2="40" stroke="#c9956a" stroke-width="0.8" stroke-linecap="round"/>
+              <ellipse cx="32" cy="40" rx="1.2" ry="0.8" fill="#e0a880"/>
+              <path d="M28 44 Q32 48 36 44" stroke="#c07050" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+              <ellipse cx="20" cy="38" rx="3" ry="1.8" fill="#FFB0B0" opacity="0.5"/>
+              <ellipse cx="44" cy="38" rx="3" ry="1.8" fill="#FFB0B0" opacity="0.5"/>
+            </svg>
+          </div>
           <h2>Welcome to my portfolio</h2>
         </div>
         <button class="popup-close" onclick="closePopup()" aria-label="Close popup">✕</button>
       </div>
-      <p>Hi, I’m <strong>Clyde Snyders</strong> — a Grade 10 student from Paterson High School, Port Elizabeth, building skills in coding, robotics, and science.</p>
-      <div class="popup-grid">
-        <span class="popup-chip">Coding</span>
-        <span class="popup-chip">Robotics</span>
-        <span class="popup-chip">Science Expo</span>
-        <span class="popup-chip">AI + Learning</span>
-      </div>
-      <button class="btn btn-primary" onclick="closePopup()">Let’s explore →</button>
+      <p>Hi, I'm <strong>Clyde Snyders</strong> — Welcome to my page and thank you for taking the time to visit :)</p>
+      <button class="btn btn-primary" onclick="closePopup()">Let's explore →</button>
     </div>
   </div>
 
@@ -1118,7 +576,6 @@
           <span>Student Portfolio</span>
         </div>
       </a>
-
       <ul class="nav-links" id="navLinks">
         <li><a href="#about">About</a></li>
         <li><a href="#achievements">Achievements</a></li>
@@ -1126,12 +583,10 @@
         <li><a href="#reading">Reading</a></li>
         <li><a class="nav-cta" href="#contact">Get in Touch</a></li>
       </ul>
-
       <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
     </nav>
-
     <div class="mobile-menu" id="mobileMenu">
       <a href="#about" onclick="closeMobile()">About</a>
       <a href="#achievements" onclick="closeMobile()">Achievements</a>
@@ -1142,49 +597,133 @@
   </header>
 
   <main>
+
+    <!-- ══════════════════════════════════════ HERO ══════════════════════════════════════ -->
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="reveal visible">
           <div class="eyebrow"><span class="dot"></span> Grade 10 · High Scholar</div>
           <h1>Clyde <span>Snyders</span></h1>
           <p class="hero-copy">
-            Hi, I’m Clyde Snyders, a 16-year-old student from South Africa. I’m open to learning new skills and I enjoy coding, robotics, and science fairs. This portfolio brings together my progress, achievements, and the ideas I am building next.
+            Hi, I'm Clyde Snyders, a 16-year-old student from South Africa. I'm open to learning new skills and I enjoy coding, robotics, and science fairs. This portfolio brings together my progress, achievements, and the ideas I am building next.
           </p>
-
           <div class="hero-meta">
-            <span class="pill blue">💻 Coding</span>
-            <span class="pill green">🤖 Robotics</span>
-            <span class="pill purple">🔬 Science</span>
+            <span class="pill blue"> Coding</span>
+            <span class="pill green"> Robotics</span>
+            <span class="pill purple"> Science</span>
           </div>
-
           <div class="hero-actions">
             <a class="btn btn-primary" href="#projects">View Projects</a>
             <a class="btn btn-secondary" href="#contact">Contact Me</a>
           </div>
-
           <div class="hero-links">
-            <a class="icon-link" href="mailto:clydesnyders17@gmail.com" aria-label="Email">✉</a>
-            <a class="icon-link" href="https://github.com/clydesnyders05-oss" target="_blank" rel="noreferrer" aria-label="GitHub">⌥</a>
-            <a class="icon-link" href="https://www.instagram.com/c.snyders.05?igsh=aDRxZTF5MG5rdzQy" target="_blank" rel="noreferrer" aria-label="Instagram">◎</a>
+            <!-- Email icon -->
+            <a class="icon-link" href="mailto:clydesnyders17@gmail.com" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="4" width="20" height="16" rx="3"/>
+                <polyline points="2,4 12,13 22,4"/>
+              </svg>
+            </a>
+            <!-- GitHub icon -->
+            <a class="icon-link" href="https://github.com/clydesnyders05-oss" target="_blank" rel="noreferrer" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="#0f172a">
+                <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+              </svg>
+            </a>
+            <!-- Instagram icon -->
+            <a class="icon-link" href="https://www.instagram.com/c.snyders.05?igsh=aDRxZTF5MG5rdzQy" target="_blank" rel="noreferrer" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" fill="none" stroke="url(#ig-grad)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <defs>
+                  <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#f09433"/>
+                    <stop offset="25%" stop-color="#e6683c"/>
+                    <stop offset="50%" stop-color="#dc2743"/>
+                    <stop offset="75%" stop-color="#cc2366"/>
+                    <stop offset="100%" stop-color="#bc1888"/>
+                  </linearGradient>
+                </defs>
+                <rect x="2" y="2" width="20" height="20" rx="5"/>
+                <circle cx="12" cy="12" r="4.5"/>
+                <circle cx="17.5" cy="6.5" r="1" fill="#dc2743" stroke="none"/>
+              </svg>
+            </a>
           </div>
         </div>
 
         <div class="hero-card reveal">
+          <!-- Hero portrait — Naruto chibi -->
           <div class="portrait">
-            👨‍💻
+            <svg width="180" height="220" viewBox="0 0 180 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Body / orange jacket -->
+              <ellipse cx="90" cy="200" rx="50" ry="28" fill="#E8690A"/>
+              <path d="M55 185 Q90 205 125 185" fill="#E8690A"/>
+              <!-- Neck -->
+              <rect x="82" y="155" width="16" height="18" rx="5" fill="#F5C5A0"/>
+              <!-- Head -->
+              <ellipse cx="90" cy="130" rx="38" ry="42" fill="#F5C5A0"/>
+              <!-- Spiky blonde hair -->
+              <ellipse cx="90" cy="96" rx="36" ry="18" fill="#F0C030"/>
+              <polygon points="54,104 44,78 62,100" fill="#F0C030"/>
+              <polygon points="58,99 50,72 66,96" fill="#FFD740"/>
+              <polygon points="65,95 58,68 72,92" fill="#F0C030"/>
+              <polygon points="73,92 68,64 80,90" fill="#FFD740"/>
+              <polygon points="82,90 79,62 90,89" fill="#F0C030"/>
+              <polygon points="90,89 90,62 100,89" fill="#FFD740"/>
+              <polygon points="100,90 101,63 110,91" fill="#F0C030"/>
+              <polygon points="109,92 113,66 118,93" fill="#FFD740"/>
+              <polygon points="117,95 122,69 126,97" fill="#F0C030"/>
+              <polygon points="124,99 130,74 133,102" fill="#FFD740"/>
+              <!-- Headband -->
+              <rect x="52" y="104" width="76" height="14" rx="4" fill="#4a7fc1"/>
+              <rect x="72" y="106" width="36" height="10" rx="2" fill="#b0c4d8"/>
+              <!-- Leaf symbol on headband -->
+              <ellipse cx="90" cy="111" rx="10" ry="6" fill="none" stroke="#4a7fc1" stroke-width="1.5"/>
+              <line x1="90" y1="105" x2="90" y2="117" stroke="#4a7fc1" stroke-width="1.2"/>
+              <!-- Ears -->
+              <ellipse cx="52" cy="132" rx="6" ry="8" fill="#F5C5A0" stroke="#e0a880" stroke-width="0.8"/>
+              <ellipse cx="128" cy="132" rx="6" ry="8" fill="#F5C5A0" stroke="#e0a880" stroke-width="0.8"/>
+              <!-- Eyes — blue anime -->
+              <ellipse cx="76" cy="130" rx="9" ry="10" fill="#3a8fdb"/>
+              <ellipse cx="76" cy="130" rx="6.5" ry="8" fill="#1a5fa0"/>
+              <ellipse cx="76" cy="130" rx="4" ry="5.5" fill="#0d3060"/>
+              <circle cx="78.5" cy="127" r="2" fill="white"/>
+              <circle cx="75" cy="133" r="1" fill="white" opacity="0.6"/>
+              <ellipse cx="104" cy="130" rx="9" ry="10" fill="#3a8fdb"/>
+              <ellipse cx="104" cy="130" rx="6.5" ry="8" fill="#1a5fa0"/>
+              <ellipse cx="104" cy="130" rx="4" ry="5.5" fill="#0d3060"/>
+              <circle cx="106.5" cy="127" r="2" fill="white"/>
+              <circle cx="103" cy="133" r="1" fill="white" opacity="0.6"/>
+              <!-- Whisker marks (Naruto's signature) -->
+              <line x1="58" y1="132" x2="70" y2="134" stroke="#c9956a" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="58" y1="137" x2="70" y2="137" stroke="#c9956a" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="58" y1="142" x2="70" y2="140" stroke="#c9956a" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="110" y1="134" x2="122" y2="132" stroke="#c9956a" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="110" y1="137" x2="122" y2="137" stroke="#c9956a" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="110" y1="140" x2="122" y2="142" stroke="#c9956a" stroke-width="1.3" stroke-linecap="round"/>
+              <!-- Nose -->
+              <ellipse cx="90" cy="142" rx="2.5" ry="1.5" fill="#e0a880"/>
+              <!-- Big smile -->
+              <path d="M78 152 Q90 162 102 152" stroke="#c07050" stroke-width="2" stroke-linecap="round" fill="none"/>
+              <!-- Blush -->
+              <ellipse cx="63" cy="142" rx="6" ry="3.5" fill="#FFB0B0" opacity="0.55"/>
+              <ellipse cx="117" cy="142" rx="6" ry="3.5" fill="#FFB0B0" opacity="0.55"/>
+            </svg>
           </div>
           <div class="floating one">
-            <div class="badge">🏆</div>
+            <div class="badge">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="white"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            </div>
             <div><span>Science Expo</span><small>Gold medal winner</small></div>
           </div>
           <div class="floating two">
-            <div class="badge">🤖</div>
+            <div class="badge"></div>
             <div><span>Robotics</span><small>Problem solving + builds</small></div>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- ══════════════════════════════════════ ABOUT ══════════════════════════════════════ -->
     <section id="about">
       <div class="container">
         <div class="section-head reveal">
@@ -1194,8 +733,8 @@
 
         <div class="about-grid">
           <div class="panel about-card reveal">
-            <p>I’m <strong>Clyde Snyders</strong>, a passionate young innovator and student at Paterson High School in Gqeberha, South Africa. I have a strong interest in robotics, coding, and science, and I enjoy using technology to solve real-world problems and create meaningful projects..</p>
-            <p>My focus is to keep improving through small projects, competitions, and everyday wolrd challenges.</p>
+            <p>I'm <strong>Clyde Snyders</strong>, a passionate young innovator and student at Paterson High School in Gqeberha, South Africa. I have a strong interest in robotics, coding, and science, and I enjoy using technology to solve real-world problems and create meaningful projects.</p>
+            <p>My focus is to keep improving through small projects, competitions, and everyday world challenges.</p>
             <p>I value teamwork and mentorship. The support of teachers, mentors, peers, and friends has helped me grow, and I am grateful for that guidance.</p>
 
             <div class="detail-grid">
@@ -1216,9 +755,52 @@
                 <strong>Code · Robotics · Science</strong>
               </div>
             </div>
+          </div>
 
           <div class="panel profile-card reveal">
-            <div class="profile-photo">🔬</div>
+            <!-- Gojo Satoru chibi for the profile photo -->
+            <div class="profile-photo">
+              <svg width="160" height="160" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <!-- Body — dark uniform -->
+                <ellipse cx="80" cy="148" rx="45" ry="20" fill="#1a1a2e"/>
+                <path d="M48 138 Q80 152 112 138" fill="#1a1a2e"/>
+                <!-- Neck -->
+                <rect x="73" y="110" width="14" height="14" rx="4" fill="#F5C5A0"/>
+                <!-- Head -->
+                <ellipse cx="80" cy="90" rx="32" ry="35" fill="#F5C5A0"/>
+                <!-- White spiky hair -->
+                <ellipse cx="80" cy="62" rx="30" ry="14" fill="#e8e8f0"/>
+                <polygon points="50,68 43,48 58,65" fill="#e8e8f0"/>
+                <polygon points="54,64 48,44 62,61" fill="#f0f0f8"/>
+                <polygon points="62,60 57,42 68,58" fill="#e8e8f0"/>
+                <polygon points="70,58 66,40 76,57" fill="#f0f0f8"/>
+                <polygon points="78,57 76,39 84,57" fill="#e8e8f0"/>
+                <polygon points="86,57 85,40 92,58" fill="#f0f0f8"/>
+                <polygon points="94,58 93,42 100,61" fill="#e8e8f0"/>
+                <polygon points="101,62 102,44 108,66" fill="#f0f0f8"/>
+                <polygon points="108,66 113,49 116,70" fill="#e8e8f0"/>
+                <!-- Gojo's blindfold/visor -->
+                <rect x="49" y="78" width="62" height="18" rx="9" fill="#1a1a2e"/>
+                <rect x="52" y="80" width="56" height="14" rx="7" fill="#2d2d4a"/>
+                <!-- Eyes visible through blindfold glow -->
+                <ellipse cx="67" cy="87" rx="7" ry="5" fill="#6ee7ff" opacity="0.85"/>
+                <ellipse cx="93" cy="87" rx="7" ry="5" fill="#6ee7ff" opacity="0.85"/>
+                <ellipse cx="67" cy="87" rx="4" ry="3" fill="#a0f0ff" opacity="0.9"/>
+                <ellipse cx="93" cy="87" rx="4" ry="3" fill="#a0f0ff" opacity="0.9"/>
+                <circle cx="68.5" cy="86" r="1.5" fill="white" opacity="0.9"/>
+                <circle cx="94.5" cy="86" r="1.5" fill="white" opacity="0.9"/>
+                <!-- Ears -->
+                <ellipse cx="48" cy="91" rx="5" ry="7" fill="#F5C5A0" stroke="#e0a880" stroke-width="0.6"/>
+                <ellipse cx="112" cy="91" rx="5" ry="7" fill="#F5C5A0" stroke="#e0a880" stroke-width="0.6"/>
+                <!-- Nose -->
+                <ellipse cx="80" cy="100" rx="2" ry="1.2" fill="#e0a880"/>
+                <!-- Confident smirk -->
+                <path d="M74 108 Q80 114 88 109" stroke="#c07050" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <!-- Blush -->
+                <ellipse cx="57" cy="100" rx="5" ry="2.8" fill="#FFB0B0" opacity="0.45"/>
+                <ellipse cx="103" cy="100" rx="5" ry="2.8" fill="#FFB0B0" opacity="0.45"/>
+              </svg>
+            </div>
             <div class="mini-stats">
               <div class="mini">
                 <strong>4+</strong>
@@ -1238,6 +820,7 @@
       </div>
     </section>
 
+    <!-- ══════════════════════════════════════ ACHIEVEMENTS ══════════════════════════════════════ -->
     <section id="achievements">
       <div class="container">
         <div class="section-head reveal">
@@ -1247,53 +830,185 @@
         </div>
 
         <div class="stats-grid reveal">
-          <div class="stat">
-            <strong>2×</strong>
-            <span>Gold Medal Science Expo</span>
-          </div>
-          <div class="stat">
-            <strong>1×</strong>
-            <span>WRO 4th Place</span>
-          </div>
-          <div class="stat">
-            <strong>1×</strong>
-            <span>Springbots Gold</span>
-          </div>
-          <div class="stat">
-            <strong>1×</strong>
-            <span>International Representation</span>
-          </div>
-          <div class="stat">
-            <strong>1×</strong>
-            <span>ISF Bronze</span>
-          </div>
-          <div class="stat">
-            <strong>1×</strong>
-            <span>2nd Place Hackathon Winner</span>
+          <div class="stat"><strong>2×</strong><span>Gold Medal Science Expo</span></div>
+          <div class="stat"><strong>1×</strong><span>WRO 4th Place</span></div>
+          <div class="stat"><strong>1×</strong><span>Springbots Gold</span></div>
+          <div class="stat"><strong>1×</strong><span>International Representation</span></div>
+          <div class="stat"><strong>1×</strong><span>ISF Bronze</span></div>
+          <div class="stat"><strong>1×</strong><span>2nd Place Hackathon Winner</span></div>
         </div>
-       </div>
 
         <div class="achievements">
-               <article class="achievement reveal">
-            <div class="icon">🤖</div>
+          <article class="achievement reveal">
+            <!-- Yuji Itadori (JJK) — detailed version with tattoo markings -->
+            <div class="icon">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                <!-- Dark collar / JJK uniform -->
+                <ellipse cx="26" cy="50" rx="18" ry="8" fill="#111827"/>
+                <path d="M14 44 Q26 50 38 44" fill="#111827"/>
+                <!-- Neck -->
+                <rect x="22" y="37" width="8" height="8" rx="3" fill="#F5C5A0"/>
+                <!-- Sukuna tattoo lines on neck -->
+                <line x1="23" y1="39" x2="29" y2="39" stroke="#1a0a0a" stroke-width="0.8" stroke-linecap="round"/>
+                <line x1="22" y1="41" x2="30" y2="41" stroke="#1a0a0a" stroke-width="0.8" stroke-linecap="round"/>
+                <!-- Head -->
+                <ellipse cx="26" cy="26" rx="17" ry="18" fill="#F5C5A0"/>
+                <!-- Dark undercut sides -->
+                <ellipse cx="9" cy="23" rx="3.5" ry="9" fill="#1a0a06"/>
+                <ellipse cx="43" cy="23" rx="3.5" ry="9" fill="#1a0a06"/>
+                <!-- Salmon-pink spiky hair top -->
+                <ellipse cx="26" cy="13" rx="16" ry="9" fill="#C85070"/>
+                <!-- Spiky tips radiating up -->
+                <polygon points="10,17 6,5 14,15" fill="#C85070"/>
+                <polygon points="13,14 10,3 17,13" fill="#E06080"/>
+                <polygon points="17,12 15,2 21,11" fill="#C85070"/>
+                <polygon points="22,11 20,1 26,11" fill="#E06080"/>
+                <polygon points="26,11 26,1 31,11" fill="#C85070"/>
+                <polygon points="30,11 31,2 36,13" fill="#E06080"/>
+                <polygon points="35,13 37,3 41,15" fill="#C85070"/>
+                <polygon points="39,15 42,5 44,17" fill="#E06080"/>
+                <!-- Dark roots gradient -->
+                <ellipse cx="26" cy="18" rx="15" ry="5.5" fill="#1a0a06" opacity="0.4"/>
+                <!-- Ears -->
+                <ellipse cx="9" cy="27" rx="3" ry="4" fill="#F5C5A0" stroke="#d9956a" stroke-width="0.6"/>
+                <ellipse cx="43" cy="27" rx="3" ry="4" fill="#F5C5A0" stroke="#d9956a" stroke-width="0.6"/>
+                <!-- Eyes — large warm brown -->
+                <ellipse cx="19" cy="26" rx="5" ry="5.5" fill="#8B4010"/>
+                <ellipse cx="19" cy="26" rx="3.5" ry="4" fill="#5A2808"/>
+                <ellipse cx="19" cy="26" rx="2" ry="2.8" fill="#2a1000"/>
+                <circle cx="21" cy="24" r="1.6" fill="white"/>
+                <circle cx="18.5" cy="28" r="0.7" fill="white" opacity="0.5"/>
+                <ellipse cx="33" cy="26" rx="5" ry="5.5" fill="#8B4010"/>
+                <ellipse cx="33" cy="26" rx="3.5" ry="4" fill="#5A2808"/>
+                <ellipse cx="33" cy="26" rx="2" ry="2.8" fill="#2a1000"/>
+                <circle cx="35" cy="24" r="1.6" fill="white"/>
+                <circle cx="32.5" cy="28" r="0.7" fill="white" opacity="0.5"/>
+                <!-- Signature under-eye groove marks -->
+                <line x1="22" y1="32" x2="25" y2="33" stroke="#b07848" stroke-width="1" stroke-linecap="round"/>
+                <line x1="27" y1="33" x2="30" y2="32" stroke="#b07848" stroke-width="1" stroke-linecap="round"/>
+                <!-- Nose -->
+                <ellipse cx="26" cy="31" rx="1.5" ry="1" fill="#d9956a"/>
+                <!-- Determined smile -->
+                <path d="M20 36 Q26 41 32 36" stroke="#b06040" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <!-- Blush -->
+                <ellipse cx="12" cy="30" rx="4" ry="2.2" fill="#FFB0A0" opacity="0.5"/>
+                <ellipse cx="40" cy="30" rx="4" ry="2.2" fill="#FFB0A0" opacity="0.5"/>
+              </svg>
+            </div>
             <div>
-              <h3>118th out of 181 countries : First Global Challenge</h3>
-              <p>2026 — I was honoured to represent South Africa as the Head Programmer for the Springbots team (TEAM SA) at the First Global Challenge in Panama—an international STEM competition often referred to as the “Olympics of Robotics.” This experience allowed me to work alongside talented students from around the world and expand my global perspective on innovation and technology. </p>
+              <h3>118th out of 181 countries: First Global Challenge</h3>
+              <p>2026 — I was honoured to represent South Africa as the Head Programmer for the Springbots team (TEAM SA) at the First Global Challenge in Panama—an international STEM competition often referred to as the "Olympics of Robotics." This experience allowed me to work alongside talented students from around the world and expand my global perspective on innovation and technology.</p>
             </div>
             <div class="year">2026</div>
           </article>
 
-            <article class="achievement reveal">
-            <div class="icon">🤖</div>
+          <article class="achievement reveal">
+            <!-- Killua Zoldyck (HxH) — white hair, teal eyes, sly smirk -->
+            <div class="icon">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                <!-- Dark hoodie body -->
+                <ellipse cx="26" cy="50" rx="18" ry="8" fill="#1e2030"/>
+                <path d="M14 44 Q26 50 38 44" fill="#1e2030"/>
+                <!-- Neck -->
+                <rect x="22" y="38" width="8" height="8" rx="3" fill="#F0D0B8"/>
+                <!-- Head — slightly pale -->
+                <ellipse cx="26" cy="27" rx="16" ry="18" fill="#F0D0B8"/>
+                <!-- White spiky-soft hair — flows down sides -->
+                <ellipse cx="26" cy="12" rx="16" ry="10" fill="#e8e8f0"/>
+                <!-- Left hair sweep -->
+                <ellipse cx="10" cy="20" rx="5" ry="10" fill="#dcdce8"/>
+                <!-- Right hair sweep -->
+                <ellipse cx="42" cy="20" rx="5" ry="10" fill="#dcdce8"/>
+                <!-- Spiky top -->
+                <polygon points="15,16 11,4 19,14" fill="#e8e8f0"/>
+                <polygon points="19,13 16,2 22,12" fill="#d8d8e8"/>
+                <polygon points="23,12 21,1 27,12" fill="#e8e8f0"/>
+                <polygon points="27,12 27,2 32,12" fill="#d8d8e8"/>
+                <polygon points="31,13 32,3 37,15" fill="#e8e8f0"/>
+                <!-- Ears -->
+                <ellipse cx="10" cy="28" rx="3" ry="4" fill="#F0D0B8" stroke="#d0a888" stroke-width="0.6"/>
+                <ellipse cx="42" cy="28" rx="3" ry="4" fill="#F0D0B8" stroke="#d0a888" stroke-width="0.6"/>
+                <!-- Teal/blue eyes — sharp and confident -->
+                <ellipse cx="19" cy="27" rx="5" ry="5.5" fill="#20c0c8"/>
+                <ellipse cx="19" cy="27" rx="3.5" ry="4" fill="#108888"/>
+                <ellipse cx="19" cy="27" rx="2" ry="2.5" fill="#054444"/>
+                <circle cx="21" cy="25" r="1.8" fill="white"/>
+                <circle cx="18" cy="29" r="0.7" fill="white" opacity="0.5"/>
+                <ellipse cx="33" cy="27" rx="5" ry="5.5" fill="#20c0c8"/>
+                <ellipse cx="33" cy="27" rx="3.5" ry="4" fill="#108888"/>
+                <ellipse cx="33" cy="27" rx="2" ry="2.5" fill="#054444"/>
+                <circle cx="35" cy="25" r="1.8" fill="white"/>
+                <circle cx="32" cy="29" r="0.7" fill="white" opacity="0.5"/>
+                <!-- Slightly raised right brow (cool expression) -->
+                <path d="M14 22 Q19 20 24 22" stroke="#a0a0b0" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+                <path d="M28 21 Q33 19 38 21" stroke="#a0a0b0" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+                <!-- Nose -->
+                <ellipse cx="26" cy="32" rx="1.4" ry="1" fill="#c8a888"/>
+                <!-- Sly one-sided smirk -->
+                <path d="M20 38 Q27 43 34 37" stroke="#a07050" stroke-width="1.8" stroke-linecap="round" fill="none"/>
+                <!-- Subtle blush — confident but not flustered -->
+                <ellipse cx="13" cy="31" rx="3.5" ry="2" fill="#FFB8A8" opacity="0.4"/>
+                <ellipse cx="39" cy="31" rx="3.5" ry="2" fill="#FFB8A8" opacity="0.4"/>
+              </svg>
+            </div>
             <div>
-              <h3>2nd Place : My first Hackathon</h3>
-              <p>2026 — I led my team to a second-place finish at a major hackathon, an experience that strengthened both my leadership and problem-solving skills. </p>
+              <h3>2nd Place: My first Hackathon</h3>
+              <p>2026 — I led my team to a second-place finish at a major hackathon, an experience that strengthened both my leadership and problem-solving skills.</p>
             </div>
             <div class="year">2026</div>
           </article>
-          
+
           <article class="achievement reveal">
-            <div class="icon">🥇</div>
+            <!-- Kakashi Hatake (Naruto) — silver hair, mask, one Sharingan eye -->
+            <div class="icon">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                <!-- Jonin vest / dark body -->
+                <ellipse cx="26" cy="50" rx="18" ry="8" fill="#3a4a3a"/>
+                <path d="M14 44 Q26 50 38 44" fill="#3a4a3a"/>
+                <!-- Neck / mask covers lower face -->
+                <rect x="18" y="35" width="16" height="12" rx="4" fill="#d8d8d8"/>
+                <!-- Head -->
+                <ellipse cx="26" cy="25" rx="17" ry="18" fill="#F2C8A0"/>
+                <!-- Spiky silver/white hair - swept to one side -->
+                <ellipse cx="28" cy="10" rx="16" ry="9" fill="#c8c8d8"/>
+                <!-- Left side sparse -->
+                <ellipse cx="11" cy="18" rx="4" ry="7" fill="#b8b8c8"/>
+                <!-- Right side swept -->
+                <ellipse cx="40" cy="16" rx="6" ry="8" fill="#c8c8d8"/>
+                <!-- Spiky tips - tilted right like Kakashi's hair -->
+                <polygon points="20,14 16,2 24,12" fill="#c8c8d8"/>
+                <polygon points="25,12 22,1 29,11" fill="#d8d8e8"/>
+                <polygon points="30,11 29,1 35,12" fill="#c8c8d8"/>
+                <polygon points="35,12 36,3 41,14" fill="#d8d8e8"/>
+                <polygon points="39,15 42,5 45,16" fill="#c8c8d8"/>
+                <!-- Headband pushed up on forehead -->
+                <rect x="9" y="19" width="34" height="10" rx="3" fill="#3a4a6a"/>
+                <rect x="12" y="20" width="28" height="8" rx="2" fill="#5a6a8a"/>
+                <!-- Leaf village symbol -->
+                <ellipse cx="26" cy="24" rx="8" ry="5" fill="none" stroke="#3a4a6a" stroke-width="1.2"/>
+                <line x1="26" y1="19" x2="26" y2="29" stroke="#3a4a6a" stroke-width="1"/>
+                <!-- Ears -->
+                <ellipse cx="9" cy="27" rx="3" ry="4" fill="#F2C8A0" stroke="#d0a070" stroke-width="0.6"/>
+                <ellipse cx="43" cy="27" rx="3" ry="4" fill="#F2C8A0" stroke="#d0a070" stroke-width="0.6"/>
+                <!-- Left eye (normal) — barely visible above mask -->
+                <ellipse cx="18" cy="31" rx="4" ry="3.5" fill="#4a6a4a"/>
+                <ellipse cx="18" cy="31" rx="2.5" ry="2.3" fill="#2a3a2a"/>
+                <circle cx="19.5" cy="30" r="1.2" fill="white"/>
+                <!-- Right eye — Sharingan (covered by headband tilt, peek visible) -->
+                <ellipse cx="34" cy="31" rx="4" ry="3.5" fill="#CC2020"/>
+                <ellipse cx="34" cy="31" rx="2.5" ry="2.3" fill="#880000"/>
+                <circle cx="34" cy="31" r="1.2" fill="#3a0000"/>
+                <circle cx="35.5" cy="30" r="0.9" fill="white" opacity="0.7"/>
+                <!-- Tomoe on sharingan -->
+                <circle cx="32.8" cy="30.5" r="0.5" fill="#CC2020" opacity="0.9"/>
+                <circle cx="35.2" cy="32.5" r="0.5" fill="#CC2020" opacity="0.9"/>
+                <!-- Mask covering lower half - no mouth visible -->
+                <rect x="13" y="33" width="26" height="13" rx="5" fill="#e0e0e0"/>
+                <!-- Mask texture lines -->
+                <line x1="14" y1="37" x2="38" y2="37" stroke="#c8c8c8" stroke-width="0.6"/>
+                <line x1="14" y1="40" x2="38" y2="40" stroke="#c8c8c8" stroke-width="0.6"/>
+              </svg>
+            </div>
             <div>
               <h3>Gold Medal: Regional Science Expo</h3>
               <p>2025 — Awarded a gold medal for the second consecutive year and won Best Category in Physics. It reflected a strong interest in experimentation and discovery.</p>
@@ -1302,7 +1017,35 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="icon">🤖</div>
+            <!-- Tanjiro (Demon Slayer) icon -->
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <!-- Dark hair with red tint -->
+                <ellipse cx="16" cy="8" rx="10" ry="7" fill="#1a0a0a"/>
+                <ellipse cx="7" cy="11" rx="3.5" ry="6" fill="#1a0a0a"/>
+                <ellipse cx="25" cy="11" rx="3.5" ry="6" fill="#1a0a0a"/>
+                <!-- Head -->
+                <ellipse cx="16" cy="19" rx="10" ry="11" fill="#F5C5A0"/>
+                <!-- Forehead scar (Tanjiro's mark) -->
+                <path d="M10 12 Q16 10 22 12" stroke="#8B0000" stroke-width="2" stroke-linecap="round" fill="none" opacity="0.8"/>
+                <!-- Eyes -->
+                <ellipse cx="12" cy="19" rx="3" ry="3.2" fill="#8B2020"/>
+                <ellipse cx="12" cy="19" rx="1.8" ry="2" fill="#5a0a0a"/>
+                <circle cx="13" cy="18" r="0.9" fill="white"/>
+                <ellipse cx="20" cy="19" rx="3" ry="3.2" fill="#8B2020"/>
+                <ellipse cx="20" cy="19" rx="1.8" ry="2" fill="#5a0a0a"/>
+                <circle cx="21" cy="18" r="0.9" fill="white"/>
+                <!-- Gentle smile -->
+                <path d="M13 24 Q16 28 19 24" stroke="#c07050" stroke-width="1.2" stroke-linecap="round" fill="none"/>
+                <ellipse cx="16" cy="22.5" rx="1.2" ry="0.8" fill="#e0a880"/>
+                <!-- Blush -->
+                <ellipse cx="8.5" cy="22" rx="2.5" ry="1.5" fill="#FFB0B0" opacity="0.55"/>
+                <ellipse cx="23.5" cy="22" rx="2.5" ry="1.5" fill="#FFB0B0" opacity="0.55"/>
+                <!-- Hanafuda earring dot -->
+                <circle cx="6" cy="19" r="2" fill="#ff4040"/>
+                <circle cx="26" cy="19" r="2" fill="#ff4040"/>
+              </svg>
+            </div>
             <div>
               <h3>Gold Medal: Springbots Robotics</h3>
               <p>2025 — Won gold at the regional Springbots robotics competition and later placed 6th nationally while helping design and program robots with my team.</p>
@@ -1311,7 +1054,33 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="icon">🏅</div>
+            <!-- Luffy (One Piece) icon -->
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <!-- Black hair -->
+                <ellipse cx="16" cy="8" rx="10" ry="7" fill="#1a1a1a"/>
+                <ellipse cx="7" cy="12" rx="3" ry="5" fill="#1a1a1a"/>
+                <ellipse cx="25" cy="12" rx="3" ry="5" fill="#1a1a1a"/>
+                <!-- Straw hat brim -->
+                <ellipse cx="16" cy="8" rx="14" ry="4" fill="#E8C84A" opacity="0.9"/>
+                <ellipse cx="16" cy="7" rx="10" ry="5" fill="#D4A030"/>
+                <!-- Hat band red -->
+                <rect x="6" y="9" width="20" height="3" rx="1.5" fill="#CC2020"/>
+                <!-- Head -->
+                <ellipse cx="16" cy="19" rx="10" ry="11" fill="#F5C5A0"/>
+                <!-- Scar under eye -->
+                <line x1="20" y1="19" x2="23" y2="23" stroke="#CC2020" stroke-width="1.5" stroke-linecap="round"/>
+                <!-- Big smile eyes -->
+                <path d="M10 18 Q12 15 14 18" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                <path d="M18 18 Q20 15 22 18" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                <!-- Giant grin -->
+                <path d="M10 23 Q16 30 22 23" stroke="#c07050" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <ellipse cx="16" cy="22" rx="1.5" ry="1" fill="#e0a880"/>
+                <!-- Blush -->
+                <ellipse cx="8" cy="23" rx="2.5" ry="1.5" fill="#FFB0B0" opacity="0.6"/>
+                <ellipse cx="24" cy="23" rx="2.5" ry="1.5" fill="#FFB0B0" opacity="0.6"/>
+              </svg>
+            </div>
             <div>
               <h3>4th Place: World Robot Olympiad</h3>
               <p>2025 — Secured 4th place in the World Robot Olympiad, competing with talented students from other schools while staying focused under pressure.</p>
@@ -1320,7 +1089,55 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="icon">🔬</div>
+            <!-- Roronoa Zoro (One Piece) — green hair, scar over left eye, determined -->
+            <div class="icon">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                <!-- Dark outfit body -->
+                <ellipse cx="26" cy="50" rx="18" ry="8" fill="#1a1a2a"/>
+                <path d="M14 44 Q26 50 38 44" fill="#1a1a2a"/>
+                <!-- Neck -->
+                <rect x="22" y="38" width="8" height="8" rx="3" fill="#F0C898"/>
+                <!-- Head -->
+                <ellipse cx="26" cy="26" rx="17" ry="18" fill="#F0C898"/>
+                <!-- Short green hair - messy -->
+                <ellipse cx="26" cy="11" rx="16" ry="9" fill="#2a8a2a"/>
+                <ellipse cx="10" cy="19" rx="4.5" ry="8" fill="#2a8a2a"/>
+                <ellipse cx="42" cy="19" rx="4.5" ry="8" fill="#2a8a2a"/>
+                <!-- Messy spiky bits -->
+                <polygon points="13,16 9,5 17,14" fill="#389038"/>
+                <polygon points="18,12 15,3 22,11" fill="#2a8a2a"/>
+                <polygon points="23,11 21,2 27,11" fill="#389038"/>
+                <polygon points="27,11 27,2 32,11" fill="#2a8a2a"/>
+                <polygon points="31,12 33,3 37,13" fill="#389038"/>
+                <!-- Ears -->
+                <ellipse cx="9" cy="27" rx="3" ry="4" fill="#F0C898" stroke="#c89060" stroke-width="0.6"/>
+                <ellipse cx="43" cy="27" rx="3" ry="4" fill="#F0C898" stroke="#c89060" stroke-width="0.6"/>
+                <!-- Left eye — black with green tint, sharp -->
+                <ellipse cx="18" cy="26" rx="5" ry="5" fill="#1a5a20"/>
+                <ellipse cx="18" cy="26" rx="3.3" ry="3.5" fill="#0a3010"/>
+                <ellipse cx="18" cy="26" rx="1.8" ry="2" fill="#040e06"/>
+                <circle cx="20" cy="24.5" r="1.5" fill="white"/>
+                <!-- Right eye — CLOSED with scar (Zoro's famous left-eye scar) -->
+                <!-- Scar running diagonally over left eye area (right side of SVG) -->
+                <ellipse cx="34" cy="26" rx="5" ry="5" fill="#1a5a20"/>
+                <ellipse cx="34" cy="26" rx="3.3" ry="3.5" fill="#0a3010"/>
+                <ellipse cx="34" cy="26" rx="1.8" ry="2" fill="#040e06"/>
+                <circle cx="36" cy="24.5" r="1.5" fill="white"/>
+                <!-- Zoro scar — diagonal across left eye (right in mirrored face) -->
+                <line x1="30" y1="21" x2="38" y2="31" stroke="#8B2020" stroke-width="1.8" stroke-linecap="round"/>
+                <!-- Strong brows -->
+                <path d="M13 21 Q18 19 23 21" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                <path d="M29 21 Q34 19 39 21" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                <!-- Nose — strong -->
+                <ellipse cx="26" cy="31" rx="1.8" ry="1.2" fill="#c08858"/>
+                <!-- Serious / determined mouth -->
+                <path d="M19 37 Q26 40 33 37" stroke="#906040" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                <!-- Three earrings on left ear -->
+                <circle cx="9" cy="24" r="1" fill="#d4a020"/>
+                <circle cx="9" cy="27" r="1" fill="#d4a020"/>
+                <circle cx="9" cy="30" r="1" fill="#d4a020"/>
+              </svg>
+            </div>
             <div>
               <h3>Gold Medal: Regional Science Fair</h3>
               <p>2024 — Secured gold in the Engineering category at the regional science fair while competing with strong projects from across the region.</p>
@@ -1329,7 +1146,54 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="icon">🌍</div>
+            <!-- Todoroki Shoto (MHA) — half white/half red hair, scar, two-tone eyes -->
+            <div class="icon">
+              <svg width="52" height="52" viewBox="0 0 52 52" fill="none">
+                <!-- UA school uniform body -->
+                <ellipse cx="26" cy="50" rx="18" ry="8" fill="#1a1a3a"/>
+                <path d="M14 44 Q26 50 38 44" fill="#1a1a3a"/>
+                <!-- Neck -->
+                <rect x="22" y="38" width="8" height="8" rx="3" fill="#F2C8A8"/>
+                <!-- Head -->
+                <ellipse cx="26" cy="26" rx="17" ry="18" fill="#F2C8A8"/>
+                <!-- LEFT half of hair — WHITE (his mother's side) -->
+                <ellipse cx="14" cy="12" rx="10" ry="9" fill="#e8e8f8"/>
+                <ellipse cx="9" cy="22" rx="5" ry="10" fill="#e0e0f0"/>
+                <!-- Spiky white tips left -->
+                <polygon points="8,18 4,6 12,16" fill="#e8e8f8"/>
+                <polygon points="12,15 9,4 16,13" fill="#d8d8e8"/>
+                <polygon points="16,13 14,3 20,12" fill="#e8e8f8"/>
+                <!-- RIGHT half of hair — RED-BROWN (his father's side) -->
+                <ellipse cx="38" cy="12" rx="10" ry="9" fill="#8B1a10"/>
+                <ellipse cx="43" cy="22" rx="5" ry="10" fill="#7a1508"/>
+                <!-- Spiky red-brown tips right -->
+                <polygon points="44,18 48,6 40,16" fill="#8B1a10"/>
+                <polygon points="40,15 43,4 36,13" fill="#9a2015"/>
+                <polygon points="36,13 38,3 32,12" fill="#8B1a10"/>
+                <!-- CENTER part — divides cleanly down middle -->
+                <line x1="26" y1="6" x2="26" y2="20" stroke="#c0a080" stroke-width="0.8"/>
+                <!-- Ears -->
+                <ellipse cx="9" cy="27" rx="3" ry="4" fill="#F2C8A8" stroke="#c8a070" stroke-width="0.6"/>
+                <ellipse cx="43" cy="27" rx="3" ry="4" fill="#F2C8A8" stroke="#c8a070" stroke-width="0.6"/>
+                <!-- LEFT eye — grey/silver (ice side) -->
+                <ellipse cx="18" cy="27" rx="5" ry="5.5" fill="#9090b8"/>
+                <ellipse cx="18" cy="27" rx="3.5" ry="4" fill="#6060a0"/>
+                <ellipse cx="18" cy="27" rx="2" ry="2.5" fill="#303060"/>
+                <circle cx="20" cy="25" r="1.6" fill="white"/>
+                <!-- RIGHT eye — teal/blue-green (fire side) -->
+                <ellipse cx="34" cy="27" rx="5" ry="5.5" fill="#208888"/>
+                <ellipse cx="34" cy="27" rx="3.5" ry="4" fill="#106060"/>
+                <ellipse cx="34" cy="27" rx="2" ry="2.5" fill="#043030"/>
+                <circle cx="36" cy="25" r="1.6" fill="white"/>
+                <!-- Scar on left side of face (under left eye) — burn scar -->
+                <path d="M10 29 Q15 27 20 30 Q18 34 13 33 Q9 32 10 29" fill="#c04040" opacity="0.55"/>
+                <path d="M10 29 Q15 27 20 30" stroke="#a03030" stroke-width="0.5" fill="none" opacity="0.6"/>
+                <!-- Neutral/stoic expression -->
+                <line x1="20" y1="37" x2="32" y2="37" stroke="#906040" stroke-width="1.4" stroke-linecap="round"/>
+                <!-- Nose -->
+                <ellipse cx="26" cy="33" rx="1.5" ry="1" fill="#c0906a"/>
+              </svg>
+            </div>
             <div>
               <h3>Bronze Medal: International Science Fair</h3>
               <p>2024 — Won bronze in the Engineering category at the International Science Fair and showed creativity and resilience on a global stage.</p>
@@ -1338,7 +1202,34 @@
           </article>
 
           <article class="achievement reveal">
-            <div class="icon">🌐</div>
+            <!-- Vegeta icon -->
+            <div class="icon">
+              <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                <!-- Flame-like spiky black hair -->
+                <polygon points="16,1 12,10 16,6 20,10" fill="#1a1a1a"/>
+                <polygon points="10,4 8,12 13,7" fill="#1a1a1a"/>
+                <polygon points="22,4 24,12 19,7" fill="#1a1a1a"/>
+                <polygon points="6,8 6,14 11,9" fill="#1a1a1a"/>
+                <polygon points="26,8 26,14 21,9" fill="#1a1a1a"/>
+                <ellipse cx="16" cy="14" rx="10" ry="8" fill="#1a1a1a"/>
+                <!-- Head -->
+                <ellipse cx="16" cy="20" rx="10" ry="10" fill="#F0D0C0"/>
+                <!-- Eyes — intense, downward angled eyebrows -->
+                <line x1="9" y1="16" x2="15" y2="18" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+                <line x1="17" y1="18" x2="23" y2="16" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round"/>
+                <ellipse cx="12" cy="19.5" rx="2.5" ry="2" fill="#2a2a4a"/>
+                <ellipse cx="12" cy="19.5" rx="1.5" ry="1.2" fill="#0a0a2a"/>
+                <circle cx="13" cy="19" r="0.7" fill="white"/>
+                <ellipse cx="20" cy="19.5" rx="2.5" ry="2" fill="#2a2a4a"/>
+                <ellipse cx="20" cy="19.5" rx="1.5" ry="1.2" fill="#0a0a2a"/>
+                <circle cx="21" cy="19" r="0.7" fill="white"/>
+                <!-- Scowl -->
+                <path d="M13 25.5 Q16 24 19 25.5" stroke="#b07050" stroke-width="1" stroke-linecap="round" fill="none"/>
+                <ellipse cx="16" cy="24" rx="1.2" ry="0.8" fill="#d0a080"/>
+                <!-- Armor collar hint -->
+                <rect x="8" y="28" width="16" height="4" rx="2" fill="#E8C030"/>
+              </svg>
+            </div>
             <div>
               <h3>Bronze Medal: World Robot Olympiad</h3>
               <p>2024 — Achieved bronze at WRO, representing the Eastern Cape internationally and collaborating with different teams.</p>
@@ -1353,6 +1244,7 @@
       </div>
     </section>
 
+    <!-- ══════════════════════════════════════ PROJECTS ══════════════════════════════════════ -->
     <section id="projects">
       <div class="container">
         <div class="section-head reveal">
@@ -1363,14 +1255,12 @@
         <div class="project-grid">
           <article class="project reveal">
             <div class="project-top">
-              <div class="project-badge badge-live">🌐 Portfolio</div>
+              <div class="project-badge badge-live"> Portfolio</div>
             </div>
             <h3>Personal Portfolio Website</h3>
             <p>This website is designed and built from scratch using HTML, CSS, and JavaScript, with a cleaner layout, better hierarchy, and a more professional first impression.</p>
             <div class="tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
+              <span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span>
             </div>
             <div class="links">
               <a href="#home">Live Site</a>
@@ -1380,39 +1270,32 @@
 
           <article class="project reveal">
             <div class="project-top">
-              <div class="project-badge badge-soon">📅 Coming Soon</div>
+              <div class="project-badge badge-soon"> Coming Soon</div>
             </div>
             <h3>My Month Calendar</h3>
             <p>A simple and useful calendar project for planning school work, competitions, deadlines, and upcoming goals. It will be a practical tool for daily use.</p>
             <div class="tags">
-              <span class="tag">Planning</span>
-              <span class="tag">UI Design</span>
-              <span class="tag">Productivity</span>
+              <span class="tag">Planning</span><span class="tag">UI Design</span><span class="tag">Productivity</span>
             </div>
-            <div class="links">
-              <a href="#contact">Ask for updates</a>
-            </div>
+            <div class="links"><a href="#contact">Ask for updates</a></div>
           </article>
 
           <article class="project reveal">
             <div class="project-top">
-              <div class="project-badge badge-school">🧪 Research</div>
+              <div class="project-badge badge-school"> Research</div>
             </div>
             <h3>Science & Robotics Showcase</h3>
             <p>A space for future project write-ups, competition summaries, experiment notes, and robot build logs. It is a great way to show progress over time.</p>
             <div class="tags">
-              <span class="tag">Science</span>
-              <span class="tag">Robotics</span>
-              <span class="tag">Innovation</span>
+              <span class="tag">Science</span><span class="tag">Robotics</span><span class="tag">Innovation</span>
             </div>
-            <div class="links">
-              <a href="#achievements">See achievements</a>
-            </div>
+            <div class="links"><a href="#achievements">See achievements</a></div>
           </article>
         </div>
       </div>
     </section>
 
+    <!-- ══════════════════════════════════════ READING ══════════════════════════════════════ -->
     <section id="reading">
       <div class="container">
         <div class="section-head reveal">
@@ -1447,7 +1330,6 @@
                 </div>
               </div>
             </div>
-
             <div class="resource-links">
               <a class="resource-link" href="https://www.freecodecamp.org/" target="_blank" rel="noreferrer">
                 <span>FreeCodeCamp</span><span>↗</span>
@@ -1460,7 +1342,7 @@
 
           <div class="panel guide-card reveal">
             <div class="eyebrow">12-Week Guide</div>
-            <h3>“How to Learn Coding in 2026 even with AI”</h3>
+            <h3>"How to Learn Coding in 2026 even with AI"</h3>
             <p>Contact or get in touch with me for my 12-week guide. It is designed to help beginners stay focused, build real projects, and use AI as a helper instead of a shortcut.</p>
             <div class="guide-banner">
               Ideal for students who want structure, confidence, and a clear path from beginner to building real websites and small apps.
@@ -1470,21 +1352,27 @@
       </div>
     </section>
 
+    <!-- ══════════════════════════════════════ CONTACT ══════════════════════════════════════ -->
     <section id="contact">
       <div class="container">
         <div class="section-head reveal">
           <div class="section-kicker">Contact</div>
           <h2 class="section-title">Get in touch</h2>
-          <p class="section-sub">I’m always open to new challenges, mentorship, collaboration, and opportunities.</p>
+          <p class="section-sub">I'm always open to new challenges, mentorship, collaboration, and opportunities.</p>
         </div>
 
         <div class="contact-grid">
           <div class="panel contact-card reveal">
             <p>Whether you are a mentor, school, organization, or someone interested in my work, I would love to connect.</p>
-
             <div class="contact-links">
               <a class="contact-item" href="mailto:clydesnyders17@gmail.com">
-                <div class="ci">✉</div>
+                <div class="ci">
+                  <!-- Email SVG -->
+                  <svg viewBox="0 0 24 24" fill="none" stroke="#2563eb" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="2" y="4" width="20" height="16" rx="3"/>
+                    <polyline points="2,4 12,13 22,4"/>
+                  </svg>
+                </div>
                 <div>
                   <strong>Email</strong>
                   <span>clydesnyders17@gmail.com</span>
@@ -1492,7 +1380,12 @@
               </a>
 
               <a class="contact-item" href="https://github.com/clydesnyders05-oss" target="_blank" rel="noreferrer">
-                <div class="ci">⌥</div>
+                <div class="ci">
+                  <!-- GitHub SVG -->
+                  <svg viewBox="0 0 24 24" fill="#0f172a">
+                    <path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
+                  </svg>
+                </div>
                 <div>
                   <strong>GitHub</strong>
                   <span>github.com/clydesnyders05-oss</span>
@@ -1500,7 +1393,24 @@
               </a>
 
               <a class="contact-item" href="https://www.instagram.com/c.snyders.05?igsh=aDRxZTF5MG5rdzQy" target="_blank" rel="noreferrer">
-                <div class="ci">◎</div>
+                <div class="ci">
+                  <!-- Instagram SVG -->
+                  <svg viewBox="0 0 24 24" fill="none">
+                    <defs>
+                      <linearGradient id="ig2" x1="0%" y1="100%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="#f09433"/>
+                        <stop offset="30%" stop-color="#e6683c"/>
+                        <stop offset="55%" stop-color="#dc2743"/>
+                        <stop offset="80%" stop-color="#cc2366"/>
+                        <stop offset="100%" stop-color="#bc1888"/>
+                      </linearGradient>
+                    </defs>
+                    <rect x="2" y="2" width="20" height="20" rx="5" fill="url(#ig2)"/>
+                    <rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="url(#ig2)" stroke-width="0"/>
+                    <circle cx="12" cy="12" r="4" fill="none" stroke="white" stroke-width="1.8"/>
+                    <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
+                  </svg>
+                </div>
                 <div>
                   <strong>Instagram</strong>
                   <span>@c.snyders.05</span>
@@ -1521,7 +1431,6 @@
                 <input id="femail" type="email" placeholder="your@email.com">
               </div>
             </div>
-
             <div class="field">
               <label for="frole">I am a...</label>
               <select id="frole">
@@ -1534,14 +1443,12 @@
                 <option>Other</option>
               </select>
             </div>
-
             <div class="field">
               <label for="fmessage">Message</label>
               <textarea id="fmessage" placeholder="Tell me what you would like to discuss..."></textarea>
             </div>
-
             <button class="submit" onclick="handleSubmit()">Send Message →</button>
-            <div class="success" id="formSuccess">Thanks! I’ll get back to you soon.</div>
+            <div class="success" id="formSuccess">Thanks! I'll get back to you soon.</div>
           </div>
         </div>
       </div>
@@ -1600,7 +1507,7 @@
 
     const revealItems = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry, index) => {
+      entries.forEach((entry) => {
         if (entry.isIntersecting) {
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
@@ -1632,12 +1539,10 @@
       const name = document.getElementById('fname').value.trim();
       const email = document.getElementById('femail').value.trim();
       const message = document.getElementById('fmessage').value.trim();
-
       if (!name || !email || !message) {
         alert('Please fill in your name, email, and message.');
         return;
       }
-
       const btn = document.querySelector('.submit');
       btn.textContent = 'Sent ✓';
       btn.disabled = true;
