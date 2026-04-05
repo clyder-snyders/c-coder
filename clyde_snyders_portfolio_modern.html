@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Clyde Snyders | Portfolio</title>
+  <meta name="description" content="Clyde Snyders — Grade 10 student at Paterson High School, Port Elizabeth. Coding, robotics, science fair projects, and a 12-week guide to learn coding in 2026 with AI." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg: #f6f8fc;
+      --bg-2: #eef2ff;
+      --surface: rgba(255,255,255,0.82);
+      --surface-strong: #ffffff;
+      --border: rgba(15, 23, 42, 0.10);
+      --text: #0f172a;
+      --muted: #64748b;
+      --blue: #2563eb;
+      --blue-2: #1d4ed8;
+      --green: #10b981;
+      --purple: #8b5cf6;
+      --purple-2: #7c3aed;
+      --shadow: 0 20px 60px rgba(15, 23, 42, 0.08);
+      --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --container: 1180px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(139,92,246,0.09), transparent 28%),
+        radial-gradient(circle at left center, rgba(37,99,235,0.07), transparent 26%),
+        radial-gradient(circle at bottom left, rgba(16,185,129,0.07), transparent 24%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.7;
+      overflow-x:hidden;
+    }
+    a{color:inherit;}
+    img{max-width:100%;display:block;}
+    button,input,textarea,select{font:inherit;}
+    ::selection{background:rgba(37,99,235,0.18);}
+
+    .container{
+      width:min(var(--container), calc(100% - 40px));
+      margin-inline:auto;
+    }
+
+    /* Navbar */
+    .nav{
+      position:fixed;
+      top:16px;
+      left:0;
+      right:0;
+      z-index:1000;
+      width:min(var(--container), calc(100% - 24px));
+      margin-inline:auto;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:16px;
+      padding:14px 18px;
+      border:1px solid rgba(255,255,255,0.5);
+      border-radius:999px;
+      background:rgba(255,255,255,0.72);
+      backdrop-filter:blur(18px);
+      box-shadow:0 12px 35px rgba(15,23,42,0.08);
+      transition:transform .25s ease, box-shadow .25s ease, background .25s ease;
+    }
+    .nav.scrolled{
+      background:rgba(255,255,255,0.88);
+      box-shadow:0 16px 45px rgba(15,23,42,0.10);
+    }
+    .brand{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      text-decoration:none;
+      min-width:max-content;
+    }
+    .brand-mark{
+      width:42px;height:42px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      color:#fff;
+      font-family:"Space Grotesk",sans-serif;
+      font-weight:700;
+      background:linear-gradient(135deg,var(--blue),var(--purple));
+      box-shadow:0 10px 24px rgba(37,99,235,0.25);
+    }
+    .brand-text{
+      display:flex;
+      flex-direction:column;
+      line-height:1.1;
+    }
+    .brand-text strong{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:1rem;
+      letter-spacing:-0.02em;
+    }
+    .brand-text span{
+      font-size:.78rem;
+      color:var(--muted);
+      margin-top:2px;
+    }
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:6px;
+      list-style:none;
+    }
+    .nav-links a{
+      text-decoration:none;
+      color:var(--muted);
+      font-weight:600;
+      font-size:.92rem;
+      padding:10px 14px;
+      border-radius:999px;
+      transition:background .2s ease, color .2s ease, transform .2s ease;
+    }
+    .nav-links a:hover,
+    .nav-links a.active{
+      background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.12));
+      color:var(--text);
+    }
+    .nav-cta{
+      text-decoration:none;
+      padding:11px 16px;
+      border-radius:999px;
+      color:#fff !important;
+      background:linear-gradient(135deg,var(--blue),var(--purple));
+      box-shadow:0 12px 25px rgba(37,99,235,0.22);
+    }
+    .menu-btn{
+      display:none;
+      border:0;
+      background:transparent;
+      width:44px;height:44px;
+      border-radius:12px;
+      cursor:pointer;
+    }
+    .menu-btn span{
+      display:block;
+      width:22px;height:2px;
+      background:var(--text);
+      margin:5px auto;
+      border-radius:999px;
+      transition:transform .25s ease, opacity .25s ease;
+    }
+    .menu-btn.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+    .menu-btn.open span:nth-child(2){opacity:0;}
+    .menu-btn.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+    .mobile-menu{
+      position:fixed;
+      top:78px;
+      left:50%;
+      transform:translateX(-50%);
+      width:min(var(--container), calc(100% - 24px));
+      z-index:999;
+      display:none;
+      padding:14px;
+      border-radius:22px;
+      background:rgba(255,255,255,0.94);
+      backdrop-filter:blur(20px);
+      box-shadow:var(--shadow);
+      border:1px solid rgba(255,255,255,0.7);
+    }
+    .mobile-menu.open{display:block;}
+    .mobile-menu a{
+      display:block;
+      text-decoration:none;
+      padding:14px 14px;
+      border-radius:14px;
+      font-weight:600;
+      color:var(--text);
+    }
+    .mobile-menu a:hover{
+      background:rgba(37,99,235,0.08);
+      color:var(--blue);
+    }
+
+    /* Hero */
+    .hero{
+      padding:132px 0 84px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap:34px;
+      align-items:center;
+    }
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding:8px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.72);
+      border:1px solid rgba(37,99,235,0.12);
+      color:var(--blue);
+      font-size:.86rem;
+      font-weight:700;
+      letter-spacing:.01em;
+      box-shadow:var(--shadow-soft);
+      margin-bottom:18px;
+    }
+    .eyebrow .dot{
+      width:10px;height:10px;border-radius:50%;
+      background:linear-gradient(135deg,var(--green),var(--blue));
+      box-shadow:0 0 0 5px rgba(16,185,129,0.10);
+    }
+    .hero h1{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(3rem, 6vw, 5.6rem);
+      line-height:0.96;
+      letter-spacing:-0.06em;
+      margin-bottom:18px;
+    }
+    .hero h1 span{
+      display:block;
+      background:linear-gradient(135deg,var(--blue),var(--purple),var(--green));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .hero-copy{
+      color:var(--muted);
+      max-width:640px;
+      font-size:1.04rem;
+      line-height:1.85;
+      margin-bottom:26px;
+    }
+    .hero-meta{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:26px;
+    }
+    .pill{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:rgba(255,255,255,0.76);
+      border:1px solid var(--border);
+      color:var(--text);
+      font-weight:600;
+      font-size:.88rem;
+      box-shadow:var(--shadow-soft);
+    }
+    .pill.blue{color:var(--blue);}
+    .pill.green{color:var(--green);}
+    .pill.purple{color:var(--purple-2);}
+    .hero-actions{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      margin-bottom:24px;
+    }
+    .btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      gap:10px;
+      text-decoration:none;
+      border-radius:16px;
+      padding:14px 18px;
+      font-weight:700;
+      border:1px solid transparent;
+      transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
+    }
+    .btn:hover{transform:translateY(-2px);}
+    .btn-primary{
+      color:#fff;
+      background:linear-gradient(135deg,var(--blue),var(--purple));
+      box-shadow:0 16px 30px rgba(37,99,235,0.18);
+    }
+    .btn-secondary{
+      background:rgba(255,255,255,0.80);
+      border-color:var(--border);
+      color:var(--text);
+    }
+    .hero-links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+    .icon-link{
+      width:46px;height:46px;
+      display:grid;place-items:center;
+      text-decoration:none;
+      border-radius:14px;
+      background:rgba(255,255,255,0.75);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow-soft);
+      transition:transform .2s ease, border-color .2s ease;
+    }
+    .icon-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(37,99,235,0.25);
+    }
+
+    .hero-card{
+      position:relative;
+      padding:22px;
+      border-radius:var(--radius-xl);
+      background:linear-gradient(180deg, rgba(255,255,255,0.88), rgba(255,255,255,0.72));
+      border:1px solid rgba(255,255,255,0.7);
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .hero-card::before,
+    .hero-card::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      pointer-events:none;
+      filter:blur(2px);
+    }
+    .hero-card::before{
+      width:220px;height:220px;
+      right:-70px;top:-80px;
+      background:radial-gradient(circle, rgba(37,99,235,0.15), transparent 65%);
+    }
+    .hero-card::after{
+      width:180px;height:180px;
+      left:-70px;bottom:-80px;
+      background:radial-gradient(circle, rgba(16,185,129,0.12), transparent 65%);
+    }
+    .portrait{
+      position:relative;
+      aspect-ratio: 4 / 5;
+      border-radius:22px;
+      overflow:hidden;
+      background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.12), rgba(16,185,129,0.10));
+      display:grid;
+      place-items:center;
+      font-size:4.8rem;
+      border:1px solid rgba(255,255,255,0.72);
+    }
+    .portrait img{
+      width:100%;height:100%;object-fit:cover;
+    }
+    .floating{
+      position:absolute;
+      display:flex;
+      align-items:center;
+      gap:10px;
+      padding:12px 14px;
+      border-radius:16px;
+      background:rgba(255,255,255,0.92);
+      box-shadow:0 16px 32px rgba(15,23,42,0.12);
+      border:1px solid rgba(255,255,255,0.8);
+      backdrop-filter:blur(12px);
+      font-size:.85rem;
+      font-weight:700;
+      color:var(--text);
+    }
+    .floating small{
+      display:block;
+      font-size:.72rem;
+      color:var(--muted);
+      font-weight:600;
+      margin-top:2px;
+    }
+    .floating.one{top:34px;left:-10px;animation:float 4.5s ease-in-out infinite;}
+    .floating.two{bottom:34px;right:-8px;animation:float 4.5s ease-in-out infinite .8s;}
+    .floating .badge{
+      width:36px;height:36px;border-radius:12px;
+      display:grid;place-items:center;
+      color:#fff;
+      background:linear-gradient(135deg,var(--blue),var(--purple));
+    }
+
+    /* Sections */
+    section{
+      padding:84px 0;
+      position:relative;
+    }
+    .section-head{
+      margin-bottom:28px;
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      max-width:760px;
+    }
+    .section-kicker{
+      color:var(--blue);
+      font-weight:800;
+      font-size:.8rem;
+      letter-spacing:.16em;
+      text-transform:uppercase;
+    }
+    .section-title{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:clamp(2rem, 3.6vw, 3.15rem);
+      line-height:1.05;
+      letter-spacing:-0.05em;
+    }
+    .section-sub{
+      color:var(--muted);
+      font-size:1rem;
+      max-width:760px;
+    }
+
+    .panel{
+      background:var(--surface);
+      border:1px solid var(--border);
+      border-radius:var(--radius-xl);
+      box-shadow:var(--shadow-soft);
+      backdrop-filter:blur(16px);
+    }
+
+    /* About */
+    .about-grid{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap:28px;
+      align-items:start;
+    }
+    .about-card{
+      padding:28px;
+    }
+    .about-card p{
+      color:var(--muted);
+      margin-bottom:16px;
+    }
+    .about-card p strong{color:var(--text);}
+    .detail-grid{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:12px;
+      margin-top:22px;
+    }
+    .detail{
+      padding:16px;
+      border-radius:18px;
+      background:rgba(248,250,252,0.9);
+      border:1px solid var(--border);
+    }
+    .detail span{
+      display:block;
+      font-size:.76rem;
+      text-transform:uppercase;
+      letter-spacing:.12em;
+      color:var(--muted);
+      font-weight:800;
+      margin-bottom:6px;
+    }
+    .detail strong{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:1rem;
+      letter-spacing:-0.02em;
+    }
+    .skills{
+      margin-top:22px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      background:linear-gradient(135deg, rgba(37,99,235,0.08), rgba(139,92,246,0.08));
+      border:1px solid rgba(37,99,235,0.12);
+      color:var(--text);
+      font-weight:700;
+      font-size:.86rem;
+    }
+    .profile-card{
+      padding:22px;
+      display:grid;
+      gap:12px;
+    }
+    .profile-photo{
+      aspect-ratio:1/1;
+      border-radius:22px;
+      display:grid;
+      place-items:center;
+      background:
+        radial-gradient(circle at 30% 30%, rgba(37,99,235,0.12), transparent 28%),
+        radial-gradient(circle at 75% 70%, rgba(16,185,129,0.12), transparent 28%),
+        linear-gradient(135deg, rgba(37,99,235,0.08), rgba(139,92,246,0.08));
+      border:1px solid var(--border);
+      font-size:5rem;
+    }
+    .mini-stats{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:12px;
+    }
+    .mini{
+      padding:16px 12px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.76);
+      border:1px solid var(--border);
+      text-align:center;
+    }
+    .mini strong{
+      display:block;
+      font-family:"Space Grotesk",sans-serif;
+      font-size:1.7rem;
+      letter-spacing:-0.05em;
+      line-height:1;
+      margin-bottom:5px;
+      color:var(--blue);
+    }
+    .mini span{
+      color:var(--muted);
+      font-size:.8rem;
+      font-weight:600;
+    }
+
+    /* Achievements */
+    .stats-grid{
+      display:grid;
+      grid-template-columns:repeat(4, minmax(0,1fr));
+      gap:14px;
+      margin-bottom:18px;
+    }
+    .stat{
+      padding:22px 18px;
+      text-align:center;
+      border-radius:22px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.90), rgba(255,255,255,0.70));
+      border:1px solid var(--border);
+      box-shadow:var(--shadow-soft);
+    }
+    .stat strong{
+      display:block;
+      font-family:"Space Grotesk",sans-serif;
+      font-size:2rem;
+      letter-spacing:-0.06em;
+      color:var(--text);
+      line-height:1;
+      margin-bottom:8px;
+    }
+    .stat span{color:var(--muted);font-size:.84rem;font-weight:600;}
+    .achievements{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:14px;
+      margin-top:24px;
+    }
+    .achievement{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:20px;
+      border-radius:22px;
+      background:var(--surface-strong);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow-soft);
+      transition:transform .2s ease, border-color .2s ease;
+    }
+    .achievement:hover{
+      transform:translateY(-3px);
+      border-color:rgba(37,99,235,0.16);
+    }
+    .icon{
+      width:52px;height:52px;
+      border-radius:16px;
+      flex:none;
+      display:grid;
+      place-items:center;
+      font-size:1.4rem;
+      background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.10));
+      border:1px solid rgba(37,99,235,0.10);
+    }
+    .achievement h3{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:1.03rem;
+      line-height:1.25;
+      margin-bottom:6px;
+    }
+    .achievement p{
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.65;
+    }
+    .year{
+      margin-left:auto;
+      white-space:nowrap;
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(37,99,235,0.08);
+      color:var(--blue);
+      font-weight:800;
+      font-size:.77rem;
+      height:fit-content;
+    }
+    .note{
+      margin-top:16px;
+      padding:16px 18px;
+      border-radius:18px;
+      border:1px dashed rgba(37,99,235,0.18);
+      background:linear-gradient(135deg, rgba(37,99,235,0.05), rgba(16,185,129,0.06));
+      color:var(--muted);
+      font-size:.93rem;
+    }
+    .note strong{color:var(--text);}
+
+    /* Projects */
+    .project-grid{
+      display:grid;
+      grid-template-columns:repeat(3, minmax(0,1fr));
+      gap:16px;
+    }
+    .project{
+      padding:22px;
+      border-radius:24px;
+      background:var(--surface-strong);
+      border:1px solid var(--border);
+      box-shadow:var(--shadow-soft);
+      transition:transform .2s ease, box-shadow .2s ease;
+      overflow:hidden;
+      position:relative;
+    }
+    .project:hover{transform:translateY(-4px);box-shadow:var(--shadow);}
+    .project::before{
+      content:"";
+      position:absolute;
+      inset:auto -40px -40px auto;
+      width:120px;height:120px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(139,92,246,0.11), transparent 60%);
+      pointer-events:none;
+    }
+    .project-top{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      margin-bottom:14px;
+    }
+    .project-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:8px 12px;
+      border-radius:999px;
+      font-size:.78rem;
+      font-weight:800;
+    }
+    .badge-live{background:rgba(16,185,129,0.10);color:var(--green);}
+    .badge-soon{background:rgba(139,92,246,0.10);color:var(--purple);}
+    .badge-school{background:rgba(37,99,235,0.10);color:var(--blue);}
+    .project h3{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:1.12rem;
+      margin-bottom:8px;
+      letter-spacing:-0.03em;
+    }
+    .project p{
+      color:var(--muted);
+      font-size:.93rem;
+      line-height:1.7;
+      margin-bottom:14px;
+    }
+    .tags{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:16px;
+    }
+    .tag{
+      padding:7px 10px;
+      border-radius:999px;
+      background:rgba(248,250,252,0.9);
+      border:1px solid var(--border);
+      color:var(--muted);
+      font-size:.76rem;
+      font-weight:700;
+    }
+    .links{
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      padding-top:14px;
+      border-top:1px solid var(--border);
+    }
+    .links a{
+      text-decoration:none;
+      color:var(--blue);
+      font-weight:800;
+      font-size:.86rem;
+    }
+
+    /* Books & Guide */
+    .resources-grid{
+      display:grid;
+      grid-template-columns:1.1fr .9fr;
+      gap:16px;
+    }
+    .resources{
+      padding:24px;
+    }
+    .book-list{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+    .book{
+      display:flex;
+      gap:14px;
+      align-items:flex-start;
+      padding:16px;
+      border-radius:18px;
+      background:rgba(248,250,252,0.95);
+      border:1px solid var(--border);
+    }
+    .book-ico{
+      width:48px;height:48px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      flex:none;
+      background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.10));
+      border:1px solid rgba(37,99,235,0.10);
+      font-size:1.25rem;
+    }
+    .book h3{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:1rem;
+      margin-bottom:3px;
+    }
+    .book p{
+      color:var(--muted);
+      font-size:.9rem;
+      line-height:1.6;
+    }
+    .resource-links{
+      display:grid;
+      gap:12px;
+      margin-top:18px;
+    }
+    .resource-link{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      text-decoration:none;
+      padding:16px 18px;
+      border-radius:18px;
+      background:rgba(255,255,255,0.86);
+      border:1px solid var(--border);
+      font-weight:800;
+      color:var(--text);
+      transition:transform .2s ease, border-color .2s ease;
+    }
+    .resource-link:hover{
+      transform:translateY(-2px);
+      border-color:rgba(37,99,235,0.20);
+    }
+    .guide-card{
+      padding:28px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      background:
+        radial-gradient(circle at top right, rgba(37,99,235,0.12), transparent 30%),
+        radial-gradient(circle at bottom left, rgba(16,185,129,0.12), transparent 28%),
+        linear-gradient(135deg, rgba(255,255,255,0.95), rgba(255,255,255,0.76));
+    }
+    .guide-card .eyebrow{margin-bottom:14px;}
+    .guide-card h3{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:1.6rem;
+      letter-spacing:-0.05em;
+      line-height:1.1;
+      margin-bottom:12px;
+    }
+    .guide-card p{
+      color:var(--muted);
+      margin-bottom:16px;
+      line-height:1.75;
+    }
+    .guide-banner{
+      padding:16px 18px;
+      border-radius:18px;
+      background:rgba(37,99,235,0.06);
+      border:1px solid rgba(37,99,235,0.12);
+      color:var(--text);
+      font-weight:700;
+      line-height:1.7;
+    }
+
+    /* Contact */
+    .contact-grid{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:16px;
+      align-items:start;
+    }
+    .contact-card{
+      padding:24px;
+    }
+    .contact-card p{
+      color:var(--muted);
+      margin-bottom:18px;
+    }
+    .contact-links{
+      display:grid;
+      gap:12px;
+    }
+    .contact-item{
+      display:flex;
+      align-items:center;
+      gap:14px;
+      text-decoration:none;
+      padding:16px 18px;
+      border-radius:18px;
+      background:rgba(248,250,252,0.95);
+      border:1px solid var(--border);
+      transition:transform .2s ease, border-color .2s ease;
+    }
+    .contact-item:hover{
+      transform:translateX(3px);
+      border-color:rgba(37,99,235,0.18);
+    }
+    .contact-item .ci{
+      width:46px;height:46px;
+      border-radius:14px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.10));
+      border:1px solid rgba(37,99,235,0.10);
+      font-size:1.1rem;
+      flex:none;
+    }
+    .contact-item strong{
+      display:block;
+      font-size:.9rem;
+      margin-bottom:2px;
+    }
+    .contact-item span{
+      display:block;
+      color:var(--muted);
+      font-size:.83rem;
+    }
+    .form{
+      padding:24px;
+    }
+    .form h3{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:1.2rem;
+      margin-bottom:18px;
+      letter-spacing:-0.03em;
+    }
+    .form-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
+    }
+    .field{margin-bottom:12px;}
+    .field label{
+      display:block;
+      font-size:.78rem;
+      font-weight:800;
+      letter-spacing:.12em;
+      text-transform:uppercase;
+      color:var(--muted);
+      margin-bottom:8px;
+    }
+    .field input,
+    .field textarea,
+    .field select{
+      width:100%;
+      border:1px solid var(--border);
+      background:rgba(248,250,252,0.96);
+      border-radius:16px;
+      padding:14px 14px;
+      outline:none;
+      transition:border-color .2s ease, box-shadow .2s ease;
+      color:var(--text);
+    }
+    .field input:focus,
+    .field textarea:focus,
+    .field select:focus{
+      border-color:rgba(37,99,235,0.35);
+      box-shadow:0 0 0 4px rgba(37,99,235,0.08);
+    }
+    .field textarea{min-height:140px;resize:vertical;}
+    .submit{
+      width:100%;
+      border:0;
+      border-radius:16px;
+      padding:14px 18px;
+      font-weight:800;
+      color:#fff;
+      background:linear-gradient(135deg,var(--blue),var(--purple));
+      box-shadow:0 16px 30px rgba(37,99,235,0.18);
+      cursor:pointer;
+      transition:transform .2s ease, opacity .2s ease;
+    }
+    .submit:hover{transform:translateY(-2px);}
+    .success{
+      display:none;
+      margin-top:12px;
+      padding:14px 16px;
+      border-radius:16px;
+      background:rgba(16,185,129,0.10);
+      color:#047857;
+      border:1px solid rgba(16,185,129,0.18);
+      font-weight:700;
+      text-align:center;
+    }
+
+    /* Footer */
+    footer{
+      padding:28px 0 36px;
+      color:var(--muted);
+    }
+    .footer-inner{
+      padding:18px 0 0;
+      border-top:1px solid var(--border);
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:18px;
+      flex-wrap:wrap;
+    }
+    .footer-brand{
+      font-family:"Space Grotesk",sans-serif;
+      font-weight:700;
+      color:var(--text);
+    }
+    .footer-links{
+      display:flex;
+      gap:16px;
+      flex-wrap:wrap;
+    }
+    .footer-links a{
+      text-decoration:none;
+      color:var(--muted);
+      font-size:.92rem;
+      font-weight:600;
+    }
+    .footer-links a:hover{color:var(--blue);}
+
+    /* Popup */
+    .popup-overlay{
+      position:fixed;
+      inset:0;
+      z-index:2000;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:18px;
+      background:rgba(15,23,42,0.52);
+      backdrop-filter:blur(8px);
+    }
+    .popup-overlay.hidden{
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .28s ease;
+    }
+    .popup{
+      width:min(520px, 100%);
+      padding:26px;
+      border-radius:28px;
+      background:rgba(255,255,255,0.96);
+      box-shadow:0 30px 80px rgba(15,23,42,0.18);
+      border:1px solid rgba(255,255,255,0.72);
+    }
+    .popup-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:18px;
+    }
+    .popup-close{
+      border:0;
+      background:rgba(248,250,252,0.95);
+      width:40px;height:40px;
+      border-radius:12px;
+      cursor:pointer;
+      font-size:1rem;
+      color:var(--muted);
+    }
+    .popup-emoji{
+      width:56px;height:56px;
+      border-radius:18px;
+      display:grid;
+      place-items:center;
+      font-size:1.5rem;
+      background:linear-gradient(135deg, rgba(37,99,235,0.10), rgba(139,92,246,0.10));
+      border:1px solid rgba(37,99,235,0.10);
+      margin-bottom:14px;
+    }
+    .popup h2{
+      font-family:"Space Grotesk",sans-serif;
+      font-size:1.65rem;
+      line-height:1.1;
+      letter-spacing:-0.04em;
+      margin-bottom:10px;
+    }
+    .popup p{
+      color:var(--muted);
+      line-height:1.75;
+      margin-bottom:18px;
+    }
+    .popup-grid{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      margin-bottom:18px;
+    }
+    .popup-chip{
+      padding:8px 12px;
+      border-radius:999px;
+      background:rgba(248,250,252,0.95);
+      border:1px solid var(--border);
+      font-size:.84rem;
+      font-weight:700;
+    }
+    .popup .btn{width:100%;}
+
+    /* Reveal */
+    .reveal{
+      opacity:0;
+      transform:translateY(24px);
+      transition:opacity .65s ease, transform .65s ease;
+    }
+    .reveal.visible{
+      opacity:1;
+      transform:translateY(0);
+    }
+
+    /* Animations */
+    @keyframes float{
+      0%,100%{transform:translateY(0);}
+      50%{transform:translateY(-7px);}
+    }
+
+    /* Responsive */
+    @media (max-width: 980px){
+      .nav-links, .nav-cta{display:none;}
+      .menu-btn{display:block;}
+      .hero-grid,
+      .about-grid,
+      .resources-grid,
+      .contact-grid{
+        grid-template-columns:1fr;
+      }
+      .project-grid,
+      .achievements{
+        grid-template-columns:1fr;
+      }
+      .stats-grid{
+        grid-template-columns:repeat(2, minmax(0,1fr));
+      }
+      .hero{
+        padding-top:120px;
+      }
+    }
+    @media (max-width: 640px){
+      .container{width:min(var(--container), calc(100% - 28px));}
+      .nav{
+        border-radius:24px;
+      }
+      .hero h1{
+        font-size:clamp(2.6rem, 12vw, 4.3rem);
+      }
+      .stats-grid,
+      .detail-grid,
+      .mini-stats,
+      .form-row{
+        grid-template-columns:1fr;
+      }
+      section{padding:72px 0;}
+    }
+  </style>
+</head>
+<body>
+
+  <div class="popup-overlay" id="popupOverlay">
+    <div class="popup">
+      <div class="popup-top">
+        <div>
+          <div class="popup-emoji">👋</div>
+          <h2>Welcome to my portfolio</h2>
+        </div>
+        <button class="popup-close" onclick="closePopup()" aria-label="Close popup">✕</button>
+      </div>
+      <p>Hi, I’m <strong>Clyde Snyders</strong> — a Grade 10 student from Paterson High School, Port Elizabeth, building skills in coding, robotics, and science.</p>
+      <div class="popup-grid">
+        <span class="popup-chip">Coding</span>
+        <span class="popup-chip">Robotics</span>
+        <span class="popup-chip">Science Expo</span>
+        <span class="popup-chip">AI + Learning</span>
+      </div>
+      <button class="btn btn-primary" onclick="closePopup()">Let’s explore →</button>
+    </div>
+  </div>
+
+  <header>
+    <nav class="nav" id="navbar">
+      <a class="brand" href="#home">
+        <div class="brand-mark">CS</div>
+        <div class="brand-text">
+          <strong>Clyde Snyders</strong>
+          <span>Student Portfolio</span>
+        </div>
+      </a>
+
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#reading">Reading</a></li>
+        <li><a class="nav-cta" href="#contact">Get in Touch</a></li>
+      </ul>
+
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <a href="#about" onclick="closeMobile()">About</a>
+      <a href="#achievements" onclick="closeMobile()">Achievements</a>
+      <a href="#projects" onclick="closeMobile()">Projects</a>
+      <a href="#reading" onclick="closeMobile()">Reading</a>
+      <a href="#contact" onclick="closeMobile()">Get in Touch</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div class="reveal visible">
+          <div class="eyebrow"><span class="dot"></span> Grade 10 · Paterson High School · Port Elizabeth, Eastern Cape</div>
+          <h1>Clyde <span>Snyders</span></h1>
+          <p class="hero-copy">
+            Hi, I’m Clyde Snyders, a 16-year-old student from South Africa. I’m open to learning new skills and I enjoy coding, robotics, and science fairs. This portfolio brings together my progress, achievements, and the ideas I am building next.
+          </p>
+
+          <div class="hero-meta">
+            <span class="pill blue">💻 Coding</span>
+            <span class="pill green">🤖 Robotics</span>
+            <span class="pill purple">🔬 Science</span>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projects">View Projects</a>
+            <a class="btn btn-secondary" href="#contact">Contact Me</a>
+          </div>
+
+          <div class="hero-links">
+            <a class="icon-link" href="mailto:clydesnyders17@gmail.com" aria-label="Email">✉</a>
+            <a class="icon-link" href="https://github.com/clydesnyders05-oss" target="_blank" rel="noreferrer" aria-label="GitHub">⌥</a>
+            <a class="icon-link" href="https://www.instagram.com/c.snyders.05?igsh=aDRxZTF5MG5rdzQy" target="_blank" rel="noreferrer" aria-label="Instagram">◎</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal">
+          <div class="portrait">
+            👨‍💻
+          </div>
+          <div class="floating one">
+            <div class="badge">🏆</div>
+            <div><span>Science Expo</span><small>Gold medal winner</small></div>
+          </div>
+          <div class="floating two">
+            <div class="badge">🤖</div>
+            <div><span>Robotics</span><small>Problem solving + builds</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">About Me</div>
+          <h2 class="section-title">A young builder with a love for tech, science, and learning</h2>
+          <p class="section-sub">A cleaner, more modern portfolio works best when it tells a strong story fast: who you are, what you make, and why it matters.</p>
+        </div>
+
+        <div class="about-grid">
+          <div class="panel about-card reveal">
+            <p>I’m <strong>Clyde Snyders</strong>, a Grade 10 student at Paterson High School in Port Elizabeth, Eastern Cape. I enjoy coding, robotics, and science fairs, and I am always open to learning new skills.</p>
+            <p>My focus is to keep improving through small projects, competitions, and real-world challenges. I like technology because it lets me build useful things, solve problems, and keep learning from every attempt.</p>
+            <p>I also value teamwork and mentorship. The support of teachers, mentors, peers, and friends has helped me grow, and I am grateful for that guidance.</p>
+
+            <div class="detail-grid">
+              <div class="detail">
+                <span>School</span>
+                <strong>Paterson High School</strong>
+              </div>
+              <div class="detail">
+                <span>Grade</span>
+                <strong>Grade 10 · 2026</strong>
+              </div>
+              <div class="detail">
+                <span>Location</span>
+                <strong>Port Elizabeth, Eastern Cape</strong>
+              </div>
+              <div class="detail">
+                <span>Focus</span>
+                <strong>Code · Robotics · Science</strong>
+              </div>
+            </div>
+
+            <div class="skills">
+              <span class="chip">HTML & CSS</span>
+              <span class="chip">JavaScript</span>
+              <span class="chip">Python</span>
+              <span class="chip">GitHub</span>
+              <span class="chip">Robotics</span>
+              <span class="chip">Science Research</span>
+              <span class="chip">Problem Solving</span>
+              <span class="chip">Teamwork</span>
+            </div>
+          </div>
+
+          <div class="panel profile-card reveal">
+            <div class="profile-photo">🔬</div>
+            <div class="mini-stats">
+              <div class="mini">
+                <strong>4+</strong>
+                <span>Medals</span>
+              </div>
+              <div class="mini">
+                <strong>3+</strong>
+                <span>Projects</span>
+              </div>
+              <div class="mini">
+                <strong>16</strong>
+                <span>Age</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Achievements</div>
+          <h2 class="section-title">Milestones that shaped my journey so far</h2>
+          <p class="section-sub">These are the moments that show growth, consistency, and the results of learning through science and technology.</p>
+        </div>
+
+        <div class="stats-grid reveal">
+          <div class="stat">
+            <strong>2×</strong>
+            <span>Gold Medal Science Expo</span>
+          </div>
+          <div class="stat">
+            <strong>1×</strong>
+            <span>WRO 4th Place</span>
+          </div>
+          <div class="stat">
+            <strong>1×</strong>
+            <span>Springbots Gold</span>
+          </div>
+          <div class="stat">
+            <strong>1×</strong>
+            <span>ISF Bronze</span>
+          </div>
+        </div>
+
+        <div class="achievements">
+          <article class="achievement reveal">
+            <div class="icon">🥇</div>
+            <div>
+              <h3>Gold Medal: Regional Science Expo</h3>
+              <p>2025 — Awarded a gold medal for the second consecutive year and won Best Category in Physics. It reflected a strong interest in experimentation and discovery.</p>
+            </div>
+            <div class="year">2025</div>
+          </article>
+
+          <article class="achievement reveal">
+            <div class="icon">🤖</div>
+            <div>
+              <h3>Gold Medal: Springbots Robotics</h3>
+              <p>2025 — Won gold at the regional Springbots robotics competition and later placed 6th nationally while helping design and program robots with my team.</p>
+            </div>
+            <div class="year">2025</div>
+          </article>
+
+          <article class="achievement reveal">
+            <div class="icon">🏅</div>
+            <div>
+              <h3>4th Place: World Robot Olympiad</h3>
+              <p>2025 — Secured 4th place in the World Robot Olympiad, competing with talented students from other schools while staying focused under pressure.</p>
+            </div>
+            <div class="year">2025</div>
+          </article>
+
+          <article class="achievement reveal">
+            <div class="icon">🔬</div>
+            <div>
+              <h3>Gold Medal: Regional Science Fair</h3>
+              <p>2024 — Secured gold in the Engineering category at the regional science fair while competing with strong projects from across the region.</p>
+            </div>
+            <div class="year">2024</div>
+          </article>
+
+          <article class="achievement reveal">
+            <div class="icon">🌍</div>
+            <div>
+              <h3>Bronze Medal: International Science Fair</h3>
+              <p>2024 — Won bronze in the Engineering category at the International Science Fair and showed creativity and resilience on a global stage.</p>
+            </div>
+            <div class="year">2024</div>
+          </article>
+
+          <article class="achievement reveal">
+            <div class="icon">🌐</div>
+            <div>
+              <h3>Bronze Medal: World Robot Olympiad</h3>
+              <p>2024 — Achieved bronze at WRO, representing the Eastern Cape internationally and collaborating with different teams.</p>
+            </div>
+            <div class="year">2024</div>
+          </article>
+        </div>
+
+        <div class="note reveal">
+          <strong>Note:</strong> I did not achieve these things on my own. I received support and guidance from mentors, teachers, peers, and friends, and I appreciate their contribution.
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Projects</div>
+          <h2 class="section-title">A small selection of what I am building</h2>
+          <p class="section-sub">This section keeps the focus on clarity and momentum, which is something you see on strong student portfolios and modern tech pages.</p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project reveal">
+            <div class="project-top">
+              <div class="project-badge badge-live">🌐 Portfolio</div>
+            </div>
+            <h3>Personal Portfolio Website</h3>
+            <p>This website is designed and built from scratch using HTML, CSS, and JavaScript, with a cleaner layout, better hierarchy, and a more professional first impression.</p>
+            <div class="tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+            <div class="links">
+              <a href="#home">Live Site</a>
+              <a href="https://github.com/clydesnyders05-oss" target="_blank" rel="noreferrer">GitHub</a>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-top">
+              <div class="project-badge badge-soon">📅 Coming Soon</div>
+            </div>
+            <h3>My Month Calendar</h3>
+            <p>A simple and useful calendar project for planning school work, competitions, deadlines, and upcoming goals. It will be a practical tool for daily use.</p>
+            <div class="tags">
+              <span class="tag">Planning</span>
+              <span class="tag">UI Design</span>
+              <span class="tag">Productivity</span>
+            </div>
+            <div class="links">
+              <a href="#contact">Ask for updates</a>
+            </div>
+          </article>
+
+          <article class="project reveal">
+            <div class="project-top">
+              <div class="project-badge badge-school">🧪 Research</div>
+            </div>
+            <h3>Science & Robotics Showcase</h3>
+            <p>A space for future project write-ups, competition summaries, experiment notes, and robot build logs. It is a great way to show progress over time.</p>
+            <div class="tags">
+              <span class="tag">Science</span>
+              <span class="tag">Robotics</span>
+              <span class="tag">Innovation</span>
+            </div>
+            <div class="links">
+              <a href="#achievements">See achievements</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="reading">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Reading & Resources</div>
+          <h2 class="section-title">Books and links that support the journey</h2>
+          <p class="section-sub">This replaces the old reading area with a sharper, more useful section that shows curiosity, discipline, and a learning mindset.</p>
+        </div>
+
+        <div class="resources-grid">
+          <div class="panel resources reveal">
+            <div class="eyebrow" style="margin-bottom:0;">3 Books to Read</div>
+            <div class="book-list">
+              <div class="book">
+                <div class="book-ico">📘</div>
+                <div>
+                  <h3>Python Crash Course</h3>
+                  <p>A friendly way to strengthen Python fundamentals and practice by building real projects.</p>
+                </div>
+              </div>
+              <div class="book">
+                <div class="book-ico">📗</div>
+                <div>
+                  <h3>How to Think Like a Computer Scientist</h3>
+                  <p>Great for learning problem solving, logic, and how programmers approach challenges.</p>
+                </div>
+              </div>
+              <div class="book">
+                <div class="book-ico">📙</div>
+                <div>
+                  <h3>Make: Electronics</h3>
+                  <p>Useful for robotics and hands-on building because it connects circuits, testing, and practical learning.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="resource-links">
+              <a class="resource-link" href="https://www.freecodecamp.org/" target="_blank" rel="noreferrer">
+                <span>FreeCodeCamp</span><span>↗</span>
+              </a>
+              <a class="resource-link" href="https://github.com/clydesnyders05-oss" target="_blank" rel="noreferrer">
+                <span>My GitHub</span><span>↗</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="panel guide-card reveal">
+            <div class="eyebrow">12-Week Guide</div>
+            <h3>“How to Learn Coding in 2026 even with AI”</h3>
+            <p>Contact or get in touch with me for my 12-week guide. It is designed to help beginners stay focused, build real projects, and use AI as a helper instead of a shortcut.</p>
+            <div class="guide-banner">
+              Ideal for students who want structure, confidence, and a clear path from beginner to building real websites and small apps.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head reveal">
+          <div class="section-kicker">Contact</div>
+          <h2 class="section-title">Get in touch</h2>
+          <p class="section-sub">I’m always open to new challenges, mentorship, collaboration, and opportunities.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="panel contact-card reveal">
+            <p>Whether you are a mentor, school, organization, or someone interested in my work, I would love to connect.</p>
+
+            <div class="contact-links">
+              <a class="contact-item" href="mailto:clydesnyders17@gmail.com">
+                <div class="ci">✉</div>
+                <div>
+                  <strong>Email</strong>
+                  <span>clydesnyders17@gmail.com</span>
+                </div>
+              </a>
+
+              <a class="contact-item" href="https://github.com/clydesnyders05-oss" target="_blank" rel="noreferrer">
+                <div class="ci">⌥</div>
+                <div>
+                  <strong>GitHub</strong>
+                  <span>github.com/clydesnyders05-oss</span>
+                </div>
+              </a>
+
+              <a class="contact-item" href="https://www.instagram.com/c.snyders.05?igsh=aDRxZTF5MG5rdzQy" target="_blank" rel="noreferrer">
+                <div class="ci">◎</div>
+                <div>
+                  <strong>Instagram</strong>
+                  <span>@c.snyders.05</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <div class="panel form reveal">
+            <h3>Send a message</h3>
+            <div class="form-row">
+              <div class="field">
+                <label for="fname">Name</label>
+                <input id="fname" type="text" placeholder="Your name">
+              </div>
+              <div class="field">
+                <label for="femail">Email</label>
+                <input id="femail" type="email" placeholder="your@email.com">
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="frole">I am a...</label>
+              <select id="frole">
+                <option value="">Select one</option>
+                <option>Mentor</option>
+                <option>Teacher / School</option>
+                <option>University / Admissions</option>
+                <option>Company / Recruiter</option>
+                <option>Collaborator</option>
+                <option>Other</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="fmessage">Message</label>
+              <textarea id="fmessage" placeholder="Tell me what you would like to discuss..."></textarea>
+            </div>
+
+            <button class="submit" onclick="handleSubmit()">Send Message →</button>
+            <div class="success" id="formSuccess">Thanks! I’ll get back to you soon.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div class="footer-brand">Clyde Snyders</div>
+      <div>© 2026 · Built in Port Elizabeth, South Africa 🇿🇦</div>
+      <div class="footer-links">
+        <a href="#about">About</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#projects">Projects</a>
+        <a href="#reading">Reading</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const navbar = document.getElementById('navbar');
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    const overlay = document.getElementById('popupOverlay');
+
+    function closePopup() {
+      overlay.classList.add('hidden');
+      sessionStorage.setItem('clyde_portfolio_seen', '1');
+      setTimeout(() => { overlay.style.display = 'none'; }, 280);
+    }
+
+    if (sessionStorage.getItem('clyde_portfolio_seen') === '1') {
+      overlay.style.display = 'none';
+    }
+
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closePopup();
+    });
+
+    menuBtn.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuBtn.classList.toggle('open', open);
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+
+    function closeMobile() {
+      mobileMenu.classList.remove('open');
+      menuBtn.classList.remove('open');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }
+
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 12);
+    });
+
+    const revealItems = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach((el, i) => {
+      el.style.transitionDelay = `${(i % 5) * 0.05}s`;
+      observer.observe(el);
+    });
+
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a:not(.nav-cta), .mobile-menu a');
+
+    const spy = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === `#${id}`);
+        });
+      });
+    }, { rootMargin: '-40% 0px -45% 0px', threshold: 0.01 });
+
+    sections.forEach(section => spy.observe(section));
+
+    function handleSubmit() {
+      const name = document.getElementById('fname').value.trim();
+      const email = document.getElementById('femail').value.trim();
+      const message = document.getElementById('fmessage').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Please fill in your name, email, and message.');
+        return;
+      }
+
+      const btn = document.querySelector('.submit');
+      btn.textContent = 'Sent ✓';
+      btn.disabled = true;
+      document.getElementById('formSuccess').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
